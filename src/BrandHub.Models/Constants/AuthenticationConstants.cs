@@ -11,4 +11,10 @@ namespace BrandHub.Constants
         public const string AdminUsername = "sysAdminUsername";
         public const string AdminPassword = "sysAdminPwd";
     }
+
+    public class AuthenticationMessages
+    {
+        public const string USER_UNAUTHENTICATED = "User is unauthenticated";
+        public const string USER_DOES_NOT_BELONG_TO_HOST = "User cannot access this domain";
+    }
 }

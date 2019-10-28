@@ -17,7 +17,7 @@ namespace BrandHub.Data.EF.Repositories.Users
     public interface IUserTokenRepository : IEntityRepository<ApplicationUserToken>
     {
         string GetToken(int userId, string userName);
-        bool IsValidToken(string token, string username);
+        bool IsValidToken(string token, out int userId);
     }
 
     [ServiceTypeOf(typeof(IUserTokenRepository))]
@@ -30,23 +30,23 @@ namespace BrandHub.Data.EF.Repositories.Users
             _appSettingReader = appSettingReader;
             TokenDurationInMinutes = _appSettingReader.GetValue<int>(AuthenticationConstants.TokenDurationKey, 30);
         }
-        public bool IsValidToken(string token, string username)
+        public bool IsValidToken(string token, out int userId)
         {
-            if (string.IsNullOrWhiteSpace(token)
-                || string.IsNullOrWhiteSpace(username))
+            userId = 0;
+            if (string.IsNullOrWhiteSpace(token))
             {
                 return false;
             }
-            var encryptedToken = EncryptUtils.SHA256Encrypt(token, username);
-            var existingToken = this.GetQueryable().AsNoTracking().FirstOrDefault(x => x.Value == encryptedToken);
+            var existingToken = this.GetQueryable().AsNoTracking().FirstOrDefault(x => x.Value == token);
             if (existingToken == null) return false;
-            if (existingToken.ExpiredTime < DateTime.UtcNow)
+            if (existingToken.ExpiredTime > DateTime.UtcNow)
             {
-                Delete(existingToken);
-                SaveChanges();
-                return false;
+                userId = existingToken.UserId;
+                return true;
             }
-            return true;
+            Delete(existingToken);
+            SaveChanges();
+            return false;
         }
         public string GetToken(int userId, string userName)
         {
@@ -54,15 +54,15 @@ namespace BrandHub.Data.EF.Repositories.Users
             var existingToken = this.GetQueryable().AsNoTracking().FirstOrDefault(x => x.UserId == userId);
             if (existingToken != null)
             {
+                if (existingToken.ExpiredTime > now) return existingToken.Value;
                 this.Delete(existingToken.ID);
             }
             var randomToken = EncryptUtils.GenerateAccessToken();
-            var encryptedToken = EncryptUtils.SHA256Encrypt(randomToken, userName);
             var token = new ApplicationUserToken()
             {
                 StartedTime = now,
                 UserId = userId,
-                Value = encryptedToken,
+                Value = randomToken,
                 ExpiredTime = now.AddMinutes(TokenDurationInMinutes)
             };
             this.Insert(token);

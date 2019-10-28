@@ -55,8 +55,15 @@ namespace BrandHub.Utilities.Helpers
             {
                 hash = GetMd5Hash(md5Hash, source);
             }
-            return hash;
+            return Base64Encode(hash);
         }
+
+        public static string Base64Encode(string plainText)
+        {
+            var plainTextBytes = System.Text.Encoding.UTF8.GetBytes(plainText);
+            return System.Convert.ToBase64String(plainTextBytes);
+        }
+
         private static string GetMd5Hash(MD5 md5Hash, string input)
         {
             byte[] data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(input));

@@ -9,7 +9,7 @@ namespace BrandHub.Services.Authentication
     public interface IAccessTokenService
     {
         string GetToken(int userId, string userName);
-        bool IsValidToken(string token, string username);
+        bool IsValidToken(string token, out int userId);
     }
 
     [ServiceTypeOf(typeof(IAccessTokenService))]
@@ -25,9 +25,9 @@ namespace BrandHub.Services.Authentication
             return _userTokenRepository.GetToken(userId, userName);
         }
 
-        public bool IsValidToken(string token, string username)
+        public bool IsValidToken(string token, out int userId)
         {
-            return _userTokenRepository.IsValidToken(token, username);
+            return _userTokenRepository.IsValidToken(token, out userId);
         }
     }
 }

@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BrandHub.Models\BrandHub.Models.csproj" />
     <ProjectReference Include="..\BrandHub.Utilities\BrandHub.Utilities.csproj" />
   </ItemGroup>
 
