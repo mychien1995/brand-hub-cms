@@ -5,4 +5,9 @@
     <RootNamespace>BrandHub</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BrandHub.Data.EF\BrandHub.Data.EF.csproj" />
+    <ProjectReference Include="..\BrandHub.Models\BrandHub.Models.csproj" />
+  </ItemGroup>
+
 </Project>
