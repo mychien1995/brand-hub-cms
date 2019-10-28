@@ -23,5 +23,8 @@ namespace BrandHub.Data.EF.Entities
         public DateTime LastLoginDate { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime UpdatedDate { get; set; }
+
+        public virtual List<ApplicationUserRole> UserRoles { get; set; }
+        public virtual List<OrganizationUser> OrganizationUserRoles { get; set; }
     }
 }

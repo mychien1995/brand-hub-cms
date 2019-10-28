@@ -19,7 +19,7 @@ namespace BrandHub.Data.EF.Entities
 
         [ForeignKey("AddressId")]
         public virtual Address Address { get; set; }
-        public virtual List<OrganizationHost> CMSHosts { get; set; }
-        public virtual List<OrganizationHost> WebsiteHosts { get; set; }
+        public virtual List<HostDefinition> WebsiteHosts { get; set; }
+        public virtual List<OrganizationUser> OrganizationUserRoles { get; set; }
     }
 }

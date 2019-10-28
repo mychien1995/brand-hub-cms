@@ -8,6 +8,13 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="2.2.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.6" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BrandHub.Framework\BrandHub.Framework.csproj" />
+    <ProjectReference Include="..\BrandHub.Models\BrandHub.Models.csproj" />
+    <ProjectReference Include="..\BrandHub.Utilities\BrandHub.Utilities.csproj" />
   </ItemGroup>
 
 </Project>

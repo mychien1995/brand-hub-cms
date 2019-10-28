@@ -3,17 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29209.62
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrandHub.Web.Api", "BrandHub.Web.Api\BrandHub.Web.Api.csproj", "{C4D8AF1F-1C81-4E1C-9ABC-90A2DDC58397}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrandHub.Web.Api", "BrandHub.Web.Api\BrandHub.Web.Api.csproj", "{C4D8AF1F-1C81-4E1C-9ABC-90A2DDC58397}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrandHub.Data.EF", "BrandHub.Data.EF\BrandHub.Data.EF.csproj", "{EC7B23C6-CCD0-4936-9248-9C6D1A18A9CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrandHub.Data.EF", "BrandHub.Data.EF\BrandHub.Data.EF.csproj", "{EC7B23C6-CCD0-4936-9248-9C6D1A18A9CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrandHub.Models", "BrandHub.Models\BrandHub.Models.csproj", "{DBDDCE5C-A2E3-4715-B7B1-F370C33E30F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrandHub.Models", "BrandHub.Models\BrandHub.Models.csproj", "{DBDDCE5C-A2E3-4715-B7B1-F370C33E30F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrandHub.Services", "BrandHub.Services\BrandHub.Services.csproj", "{7EA2A7DA-FB2B-496A-BB4C-6DD59E799960}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrandHub.Services", "BrandHub.Services\BrandHub.Services.csproj", "{7EA2A7DA-FB2B-496A-BB4C-6DD59E799960}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrandHub.Framework", "BrandHub.Framework\BrandHub.Framework.csproj", "{D70C3997-DDEC-4F61-B782-2B0BB2875F89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrandHub.Framework", "BrandHub.Framework\BrandHub.Framework.csproj", "{D70C3997-DDEC-4F61-B782-2B0BB2875F89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrandHub.CMS.Api", "BrandHub.CMS.Api\BrandHub.CMS.Api.csproj", "{FB9B7279-F09C-4F16-826B-AA6FBE5246C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrandHub.CMS.Api", "BrandHub.CMS.Api\BrandHub.CMS.Api.csproj", "{FB9B7279-F09C-4F16-826B-AA6FBE5246C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrandHub.Utilities", "BrandHub.Utilities\BrandHub.Utilities.csproj", "{5D1CEB23-B01D-40A5-9E76-0CF6B2F7A887}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{FB9B7279-F09C-4F16-826B-AA6FBE5246C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB9B7279-F09C-4F16-826B-AA6FBE5246C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB9B7279-F09C-4F16-826B-AA6FBE5246C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D1CEB23-B01D-40A5-9E76-0CF6B2F7A887}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D1CEB23-B01D-40A5-9E76-0CF6B2F7A887}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D1CEB23-B01D-40A5-9E76-0CF6B2F7A887}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D1CEB23-B01D-40A5-9E76-0CF6B2F7A887}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
