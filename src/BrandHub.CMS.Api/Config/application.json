@@ -1,0 +1,10 @@
+{
+  "initializations": [
+    {
+      "type": "BrandHub.Data.EF.DatabaseInitializationModule, BrandHub.Data.EF"
+    },
+    {
+      "type": "BrandHub.Framework.Initializations.MvcInitializationModule, BrandHub.Framework"
+    }
+  ]
+}

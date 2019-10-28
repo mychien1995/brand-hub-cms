@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BrandHub.Framework.IoC
 {
-    class ServiceTypeOfAttribute : Attribute
+    public class ServiceTypeOfAttribute : Attribute
     {
         public Type ServiceType;
         public LifetimeScope LifetimeScope;
