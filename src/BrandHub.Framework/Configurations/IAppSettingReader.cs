@@ -10,7 +10,7 @@ namespace BrandHub.Framework.Configurations
     {
         T GetValue<T>(string key, T defaultValue);
     }
-    [ServiceTypeOf(IAppSettingReader)]
+    [ServiceTypeOf(typeof(IAppSettingReader))]
     public class AppSettingReader : IAppSettingReader
     {
         private IConfiguration _configuration;

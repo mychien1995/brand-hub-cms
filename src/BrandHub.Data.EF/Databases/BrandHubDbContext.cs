@@ -12,24 +12,11 @@ namespace BrandHub.Data.EF.Databases
     {
         public BrandHubDbContext()
         {
-
         }
         public BrandHubDbContext(DbContextOptions<BrandHubDbContext> options)
     : base(options)
         {
 
-        }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-                IConfigurationRoot configuration = new ConfigurationBuilder()
-                   .SetBasePath(Directory.GetCurrentDirectory())
-                   .AddJsonFile("appsettings.json")
-                   .Build();
-                var connectionString = configuration.GetConnectionString("Default");
-                optionsBuilder.UseSqlServer(connectionString).UseLazyLoadingProxies();
-            }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -37,6 +24,7 @@ namespace BrandHub.Data.EF.Databases
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<ApplicationUser>().ToTable("Users");
             modelBuilder.Entity<ApplicationRole>().ToTable("Roles");
+            modelBuilder.Entity<ApplicationRole>().Property(x => x.ID).ValueGeneratedNever();
             modelBuilder.Entity<ApplicationUserToken>().ToTable("UserTokens");
             modelBuilder.Entity<ApplicationUserRole>().ToTable("UserRoles");
             modelBuilder.Entity<ApplicationUser>

@@ -1,4 +1,5 @@
-﻿using BrandHub.Data.EF.Repositories.Organizations;
+﻿using BrandHub.Data.EF.Extensions;
+using BrandHub.Data.EF.Repositories.Organizations;
 using BrandHub.Data.EF.Repositories.Users;
 using BrandHub.Framework.IoC;
 using BrandHub.Models;
@@ -8,13 +9,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace BrandHub.Services.Authentication
 {
     public interface IUserManager
     {
-        SignInResult PasswordSignIn(string username, string password, string hostName, out UserModel user);
-        SignInResult PasswordSignIn(string username, string password, out UserModel user);
+        Task<SignInResult> PasswordSignInAsync(string username, string password, string hostName);
     }
     [ServiceTypeOf(typeof(IUserManager))]
     public class UserManager : IUserManager
@@ -22,18 +23,22 @@ namespace BrandHub.Services.Authentication
         private readonly IUserRepository _userRepository;
         private readonly IHostDefinitionRepository _hostDefinitionRepository;
         private readonly IOrganizationUserRepository _organizationUserRepository;
-        public UserManager(IUserRepository userRepository, IHostDefinitionRepository hostDefinitionRepository, IOrganizationUserRepository organizationUserRepository)
+        private readonly IUserRoleRepository _userRoleRepository;
+        public UserManager(IUserRepository userRepository, IHostDefinitionRepository hostDefinitionRepository,
+            IOrganizationUserRepository organizationUserRepository, IUserRoleRepository userRoleRepository)
         {
             _userRepository = userRepository;
             _hostDefinitionRepository = hostDefinitionRepository;
             _organizationUserRepository = organizationUserRepository;
+            _userRoleRepository = userRoleRepository;
         }
-
-        public SignInResult PasswordSignIn(string username, string password, string hostName, out UserModel user)
+        public async Task<SignInResult> PasswordSignInAsync(string username, string password, string hostName)
         {
-            var signInResult = PasswordSignIn(username, password, hostName, out user);
+            var signInResult = await PasswordSignInAsync(username, password);
             if (signInResult.Success)
             {
+                var user = signInResult.User;
+                _userRoleRepository.FetchRoles(user);
                 if (user.Roles.Any(x => x.CanBypassDomain())) return signInResult;
                 if (string.IsNullOrEmpty(hostName))
                 {
@@ -41,14 +46,14 @@ namespace BrandHub.Services.Authentication
                     signInResult.Message = Constants.Messages.INVALID_HOSTNAME;
                     return signInResult;
                 }
-                var host = _hostDefinitionRepository.FindByName(hostName);
+                var host = await _hostDefinitionRepository.FindByNameAsync(hostName);
                 if (host == null || host.Organization == null)
                 {
                     signInResult.Success = false;
                     signInResult.Message = Constants.Messages.INVALID_HOSTNAME;
                     return signInResult;
                 }
-                var userBelongToOrg = _organizationUserRepository.UserBelongToOrganization(user.ID, host.Organization.ID);
+                var userBelongToOrg = await _organizationUserRepository.UserBelongToOrganizationAsync(user.ID, host.Organization.ID);
                 if (!userBelongToOrg)
                 {
                     signInResult.Success = false;
@@ -59,29 +64,29 @@ namespace BrandHub.Services.Authentication
             return signInResult;
         }
 
-        public SignInResult PasswordSignIn(string username, string password, out UserModel user)
+        public async Task<SignInResult> PasswordSignInAsync(string username, string password)
         {
-            user = null;
             var result = new SignInResult();
-            var userEntity = _userRepository.FindByUsername(username);
+            var userEntity = await _userRepository.FindByUsernameAsync(username);
             if (userEntity == null)
             {
                 result.Message = Constants.Messages.INVALID_LOGIN;
                 return result;
             }
-            if (userEntity.IsActive)
+            if (!userEntity.IsActive)
             {
                 result.Message = Constants.Messages.USER_INACTIVE;
                 return result;
             }
             var salt = userEntity.PasswordSalt;
             var passwordHash = EncryptUtils.SHA256Encrypt(password, salt);
-            if (passwordHash != user.PasswordHash)
+            if (passwordHash != userEntity.PasswordHash)
             {
                 result.Message = Constants.Messages.INVALID_LOGIN;
                 return result;
             }
-            user = new UserModel();
+            result.User = userEntity.ToModel();
+            result.Success = true;
             return result;
         }
     }

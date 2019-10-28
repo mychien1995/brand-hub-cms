@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrandHub.Framework", "Brand
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrandHub.CMS.Api", "BrandHub.CMS.Api\BrandHub.CMS.Api.csproj", "{FB9B7279-F09C-4F16-826B-AA6FBE5246C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrandHub.Utilities", "BrandHub.Utilities\BrandHub.Utilities.csproj", "{5D1CEB23-B01D-40A5-9E76-0CF6B2F7A887}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrandHub.Utilities", "BrandHub.Utilities\BrandHub.Utilities.csproj", "{5D1CEB23-B01D-40A5-9E76-0CF6B2F7A887}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
