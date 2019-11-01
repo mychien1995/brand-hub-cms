@@ -53,7 +53,7 @@ namespace BrandHub.Services.Authentication
                     signInResult.Message = Constants.Messages.INVALID_HOSTNAME;
                     return signInResult;
                 }
-                var userBelongToOrg = await _organizationUserRepository.UserBelongToOrganizationAsync(user.ID, host.Organization.ID);
+                var userBelongToOrg = await _organizationUserRepository.UserIsInOrganizationAsync(user.ID, host.Organization.ID);
                 if (!userBelongToOrg)
                 {
                     signInResult.Success = false;

@@ -42,7 +42,7 @@ namespace BrandHub.CMS.Api.Filters
                 context.Result = new UnauthorizedResult();
                 return;
             }
-            var user = _userService.GetUserWithRoles(userId);
+            var user = _userService.GetUserById(userId, true);
             if (user == null)
             {
                 context.Result = new UnauthorizedResult();

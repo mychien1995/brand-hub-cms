@@ -1,4 +1,7 @@
 ﻿using BrandHub.CMS.Api.Attributes;
+using BrandHub.Models;
+using BrandHub.Models.Users;
+using BrandHub.Services.Users;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -13,10 +16,21 @@ namespace BrandHub.CMS.Api.Controllers
 
     public class UsersController : ControllerBase
     {
-        [HttpPost]
-        public ActionResult<int> Create()
+        private readonly IUserService _userService;
+        public UsersController(IUserService userService)
         {
-            return 1;
+            _userService = userService;
+        }
+        [HttpPost]
+        public ActionResult<OperationResult<int?>> Create([FromBody]CreateUserModel model)
+        {
+            var result = _userService.CreateUser(model);
+            return new OperationResult<int?>()
+            {
+                IsSuccess = result.IsSuccess,
+                Data = result.Data?.ID,
+                Message = result.Message
+            };
         }
     }
 }

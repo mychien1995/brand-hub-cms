@@ -8,10 +8,9 @@ namespace BrandHub.Models.Users
     {
         public CreateUserModel()
         {
-            RoleIds = new List<int>();
+            OrganizationRoleIds = new List<int>();
         }
-        public List<int> RoleIds { get; set; }
         public int? OrganizationId { get; set; }
-        public int? OrganizationRoleId { get; set; }
+        public List<int> OrganizationRoleIds { get; set; }
     }
 }

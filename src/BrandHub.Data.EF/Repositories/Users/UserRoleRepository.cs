@@ -13,6 +13,7 @@ namespace BrandHub.Data.EF.Repositories.Users
     public interface IUserRoleRepository : IEntityRepository<ApplicationUserRole>
     {
         void FetchRoles(UserModel model);
+        void AssignRolesToUser(int userId, IEnumerable<int> roleIds);
     }
     [ServiceTypeOf(typeof(IUserRoleRepository))]
     public class UserRoleRepository : BaseRepository<ApplicationUserRole>, IUserRoleRepository
@@ -30,6 +31,21 @@ namespace BrandHub.Data.EF.Repositories.Users
                 ID = x.RoleId,
                 RoleName = x.Role.RoleName
             }).ToList();
+        }
+
+        public void AssignRolesToUser(int userId, IEnumerable<int> roleIds)
+        {
+            foreach (var roleId in roleIds)
+            {
+                var hasExistingRole = this.GetQueryable().AsNoTracking().Any(c => c.UserId == userId && c.RoleId == roleId);
+                if (hasExistingRole) continue;
+                Insert(new ApplicationUserRole()
+                {
+                    RoleId = roleId,
+                    UserId = userId
+                });
+            }
+            SaveChanges();
         }
     }
 }

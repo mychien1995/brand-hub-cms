@@ -3,6 +3,7 @@ using BrandHub.Data.EF.Repositories.Organizations;
 using BrandHub.Data.EF.Repositories.Users;
 using BrandHub.Framework.IoC;
 using BrandHub.Models;
+using BrandHub.Models.Organizations;
 using BrandHub.Models.Users;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -14,8 +15,10 @@ namespace BrandHub.Services.Users
 {
     public interface IUserService
     {
-        UserModel GetUserWithRoles(int userId);
+        UserModel GetUserById(int userId, bool withRole = false);
         bool UserCanAccessHost(string hostName, int userId);
+
+        OperationResult<UserModel> CreateUser(CreateUserModel createUserModel);
     }
 
     [ServiceTypeOf(typeof(IUserService))]
@@ -33,11 +36,14 @@ namespace BrandHub.Services.Users
             _hostDefinitionRepository = hostDefinitionRepository;
             _organizationUserRepository = organizationUserRepository;
         }
-        public UserModel GetUserWithRoles(int userId)
+        public UserModel GetUserById(int userId, bool withRole = false)
         {
             var user = _userRepository.GetById(userId);
             var model = user.ToModel();
-            _userRoleRepository.FetchRoles(model);
+            if (withRole)
+            {
+                _userRoleRepository.FetchRoles(model);
+            }
             return model;
         }
 
@@ -45,37 +51,38 @@ namespace BrandHub.Services.Users
         {
             var host = _hostDefinitionRepository.FindByName(hostName);
             if (host == null) return false;
-            return _organizationUserRepository.UserBelongToOrganization(userId, host.OrganizationId);
+            return _organizationUserRepository.UserIsInOrganization(userId, host.OrganizationId);
         }
 
         public OperationResult<UserModel> CreateUser(CreateUserModel createUserModel)
         {
-            var result = new OperationResult<UserModel>(false);
-            var userCanBypassDomain = createUserModel.Roles.All(c => c.CanBypassDomain());
-            if (!userCanBypassDomain && createUserModel.OrganizationId == null)
-            {
-                return new OperationResult<UserModel>(false, Constants.Messages.USER_REQUIRE_ORGANIZATION);
-            }
-            var sameEmailUser = FindByEmail(createUserModel.Email);
-            if (sameEmailUser != null)
-            {
-                return new OperationResult<UserModel>(false, Constants.Messages.USER_UNIQUE_EMAIL);
-            }
-            var samePhoneUser = FindByPhonenumber(createUserModel.PhoneNumber);
-            if (samePhoneUser != null)
-            {
-                return new OperationResult<UserModel>(false, Constants.Messages.USER_UNIQUE_PHONE);
-            }
-            var sameUsernameUser = FindByUsername(createUserModel.Username);
-            if (sameUsernameUser != null)
-            {
-                return new OperationResult<UserModel>(false, Constants.Messages.USER_UNIQUE_USERNAME);
-            }
+            var result = ValidateUserMutationData(createUserModel);
+            if (!result.IsSuccess) return result;
             var userEntity = createUserModel.ToEntity();
             var newUser = _userRepository.Insert(userEntity);
             _userRepository.SaveChanges();
-            return null;
-
+            _userRoleRepository.AssignRolesToUser(newUser.ID, createUserModel.Roles.Select(x => x.ID));
+            var newUserModel = newUser.ToModel();
+            _userRoleRepository.FetchRoles(newUserModel);
+            if (createUserModel.OrganizationId != null)
+            {
+                var organizationId = createUserModel.OrganizationId.Value;
+                var organizationRoleUpdateModel = new OrganizationUserRoleUpdateModel()
+                {
+                    OrganizationId = organizationId,
+                    Users = new List<OrganizationUserUpdateModel>()
+                    {
+                        new OrganizationUserUpdateModel()
+                        {
+                            UserId = newUserModel.ID,
+                            OrganizationRoleIds = createUserModel.OrganizationRoleIds
+                        }
+                    }
+                };
+                _organizationUserRepository.AssignUserToOrganization(organizationRoleUpdateModel);
+            }
+            result.Data = newUserModel;
+            return result;
         }
 
         public UserModel FindByEmail(string email)
@@ -97,6 +104,32 @@ namespace BrandHub.Services.Users
             var user = this._userRepository.GetQueryable().AsNoTracking().FirstOrDefault(c => c.PhoneNumber == phoneNumber);
             if (user != null) return user.ToModel();
             return null;
+        }
+
+        private OperationResult<UserModel> ValidateUserMutationData(CreateUserModel createUserModel)
+        {
+            var result = new OperationResult<UserModel>(true);
+            var userCanBypassDomain = createUserModel.Roles.All(c => c.CanBypassDomain());
+            if (!userCanBypassDomain && createUserModel.OrganizationId == null)
+            {
+                return new OperationResult<UserModel>(false, Constants.Messages.USER_REQUIRE_ORGANIZATION);
+            }
+            var sameEmailUser = FindByEmail(createUserModel.Email);
+            if (sameEmailUser != null)
+            {
+                return new OperationResult<UserModel>(false, Constants.Messages.USER_UNIQUE_EMAIL);
+            }
+            var samePhoneUser = FindByPhonenumber(createUserModel.PhoneNumber);
+            if (samePhoneUser != null)
+            {
+                return new OperationResult<UserModel>(false, Constants.Messages.USER_UNIQUE_PHONE);
+            }
+            var sameUsernameUser = FindByUsername(createUserModel.Username);
+            if (sameUsernameUser != null)
+            {
+                return new OperationResult<UserModel>(false, Constants.Messages.USER_UNIQUE_USERNAME);
+            }
+            return result;
         }
     }
 }
