@@ -1,5 +1,6 @@
 ﻿using BrandHub.Data.EF.Entities;
 using BrandHub.Models;
+using BrandHub.Models.Organizations;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -48,6 +49,36 @@ namespace BrandHub.Data.EF.Extensions
                 LastLoginDate = model.LastLoginDate,
                 CreatedDate = model.CreatedDate,
                 UpdatedDate = model.UpdatedDate
+            };
+        }
+        #endregion
+
+        #region Product
+        public static OrganizationModel ToModel(this Organization entity)
+        {
+            if (entity == null) return null;
+            return new OrganizationModel()
+            {
+                ID = entity.ID,
+                Name = entity.Name,
+                IsActive = entity.IsActive,
+                IsDeleted = entity.IsDeleted,
+                CreatedDate = entity.CreatedDate,
+                AddressId = entity.AddressId,
+            };
+        }
+
+        public static Organization ToEntity(this OrganizationModel model)
+        {
+            if (model == null) return null;
+            return new Organization()
+            {
+                ID = model.ID,
+                Name = model.Name,
+                IsActive = model.IsActive,
+                IsDeleted = model.IsDeleted,
+                CreatedDate = model.CreatedDate,
+                AddressId = model.AddressId
             };
         }
         #endregion

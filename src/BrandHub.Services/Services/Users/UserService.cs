@@ -1,4 +1,5 @@
-﻿using BrandHub.Data.EF.Extensions;
+﻿using BrandHub.Constants;
+using BrandHub.Data.EF.Extensions;
 using BrandHub.Data.EF.Repositories.Organizations;
 using BrandHub.Data.EF.Repositories.Users;
 using BrandHub.Framework.IoC;
@@ -28,13 +29,15 @@ namespace BrandHub.Services.Users
         private readonly IUserRoleRepository _userRoleRepository;
         private readonly IHostDefinitionRepository _hostDefinitionRepository;
         private readonly IOrganizationUserRepository _organizationUserRepository;
+        private readonly ISystemRoleComparer _systemRoleComparer;
         public UserService(IUserRepository userRepository, IUserRoleRepository userRoleRepository, IHostDefinitionRepository hostDefinitionRepository,
-            IOrganizationUserRepository organizationUserRepository)
+            IOrganizationUserRepository organizationUserRepository, ISystemRoleComparer systemRoleComparer)
         {
             _userRepository = userRepository;
             _userRoleRepository = userRoleRepository;
             _hostDefinitionRepository = hostDefinitionRepository;
             _organizationUserRepository = organizationUserRepository;
+            _systemRoleComparer = systemRoleComparer;
         }
         public UserModel GetUserById(int userId, bool withRole = false)
         {
@@ -56,12 +59,12 @@ namespace BrandHub.Services.Users
 
         public OperationResult<UserModel> CreateUser(CreateUserModel createUserModel)
         {
-            var result = ValidateUserMutationData(createUserModel);
+            var result = ValidateUserData(createUserModel);
             if (!result.IsSuccess) return result;
             var userEntity = createUserModel.ToEntity();
             var newUser = _userRepository.Insert(userEntity);
             _userRepository.SaveChanges();
-            _userRoleRepository.AssignRolesToUser(newUser.ID, createUserModel.Roles.Select(x => x.ID));
+            _userRoleRepository.AssignRolesToUser(newUser.ID, new List<int>() { createUserModel.RoleId });
             var newUserModel = newUser.ToModel();
             _userRoleRepository.FetchRoles(newUserModel);
             if (createUserModel.OrganizationId != null)
@@ -106,13 +109,19 @@ namespace BrandHub.Services.Users
             return null;
         }
 
-        private OperationResult<UserModel> ValidateUserMutationData(CreateUserModel createUserModel)
+        private OperationResult<UserModel> ValidateUserData(CreateUserModel createUserModel)
         {
             var result = new OperationResult<UserModel>(true);
-            var userCanBypassDomain = createUserModel.Roles.All(c => c.CanBypassDomain());
+            var userRole = new RoleModel();
+            userRole.ID = createUserModel.RoleId;
+            var userCanBypassDomain = userRole.CanBypassDomain();
             if (!userCanBypassDomain && createUserModel.OrganizationId == null)
             {
                 return new OperationResult<UserModel>(false, Constants.Messages.USER_REQUIRE_ORGANIZATION);
+            }
+            if (!_systemRoleComparer.CanMadeChange(createUserModel.CreateUserRoleId, createUserModel.RoleId))
+            {
+                return new OperationResult<UserModel>(false, Constants.Messages.USER_ROLE_OVERRULE);
             }
             var sameEmailUser = FindByEmail(createUserModel.Email);
             if (sameEmailUser != null)

@@ -10,7 +10,9 @@ namespace BrandHub.Models.Users
         {
             OrganizationRoleIds = new List<int>();
         }
+        public int CreateUserRoleId { get; set; }
         public int? OrganizationId { get; set; }
         public List<int> OrganizationRoleIds { get; set; }
+        public int RoleId { get; set; }
     }
 }
