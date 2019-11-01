@@ -13,7 +13,7 @@ namespace BrandHub.Services.Organizations
 {
     public interface IOrganizationService
     {
-        OperationResult<OrganizationModel> CreateOrganization(CreateOrganizationRequest request)
+        OperationResult<OrganizationModel> CreateOrganization(CreateOrganizationRequest request);
     }
 
     [ServiceTypeOf(typeof(IOrganizationService))]
@@ -39,6 +39,7 @@ namespace BrandHub.Services.Organizations
             var address = new Address();
             address.AddressLine = request.AddressLine;
             address.CountryId = request.CountryId;
+            address.ProvinceId = request.ProvinceId;
             address.DistrictId = request.DistrictId;
             var newAddress = _addressRepository.Insert(address);
             _addressRepository.SaveChanges();

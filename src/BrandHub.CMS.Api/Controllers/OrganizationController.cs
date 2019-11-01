@@ -26,6 +26,8 @@ namespace BrandHub.CMS.Api.Controllers
         [HttpPost]
         public ActionResult<OperationResult<int?>> Create([FromBody]CreateOrganizationRequest model)
         {
+            model.IsActive = true;
+            model.CreatedDate = DateTime.UtcNow;
             var result = _organizationService.CreateOrganization(model);
             return new OperationResult<int?>()
             {
