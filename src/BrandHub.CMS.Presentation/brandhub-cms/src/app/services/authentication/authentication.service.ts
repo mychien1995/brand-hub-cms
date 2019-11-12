@@ -5,6 +5,7 @@ import { LocalStorageService } from 'angular-2-local-storage';
 import { LoginModel } from '../../models/authentication/login.model';
 import { MessageModel } from '../../models/message.model';
 import { Observable, of } from 'rxjs';
+import { map, catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -15,11 +16,11 @@ export class AuthenticationService {
   	private TokenStorageKey : string = 'app-token';
 
   	constructor(private _config: ConfigService, private _httpClient: HttpClient, private _localStorageService : LocalStorageService) {
-  		BaseApiUrl = _config.get('BaseApiUrl');
    	}
 
    	login(user: LoginModel) : Observable<MessageModel>{
-   		var url = `${this.BaseApiUrl}/authentication/token`;
+  		this.BaseApiUrl = this._config.get('BASE_API_URL');
+   		var url = `${this.BaseApiUrl}authentication/token`;
    		var requestOptions : Object = {
    			responseType : 'text'
    		};
@@ -40,7 +41,7 @@ export class AuthenticationService {
 
    	private loginFailed(error : HttpErrorResponse){
    		var result : MessageModel = {
-   			Message = error.message,
+   			Message : error.error,
 		  	IsSuccess : false
 	  	};
 	 	return of(result);

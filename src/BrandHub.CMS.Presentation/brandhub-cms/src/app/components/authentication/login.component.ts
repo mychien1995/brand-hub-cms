@@ -14,11 +14,11 @@ export class LoginComponent implements OnInit {
   private model : LoginModel;
 
   constructor(private _authenticationService : AuthenticationService, private _router: Router) { 
-  	model = new LoginModel();
+  	this.model = new LoginModel();
   }
 
   ngOnInit() {
-  	
+
   }
 
   login(){
