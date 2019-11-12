@@ -17,6 +17,7 @@ namespace BrandHub.Services
             public const string USER_UNIQUE_USERNAME = "An user with this username is already existed";
             public const string USER_ROLE_OVERRULE = "Your user cannot made changes to user of this role";
             public const string ORGANIZATION_DUPLICATE_HOST = "This host name is already being used";
+            public const string ORGANIZATION_DONT_EXIST = "Organization doesn't exist";
         }
     }
 }

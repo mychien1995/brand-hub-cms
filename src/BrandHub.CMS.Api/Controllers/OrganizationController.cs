@@ -24,7 +24,7 @@ namespace BrandHub.CMS.Api.Controllers
             _organizationService = organizationService;
         }
         [HttpPost]
-        public ActionResult<OperationResult<int?>> Create([FromBody]CreateOrganizationRequest model)
+        public ActionResult<OperationResult<int?>> Create([FromBody]UpdateOrganizationRequest model)
         {
             model.IsActive = true;
             model.CreatedDate = DateTime.UtcNow;
@@ -33,6 +33,32 @@ namespace BrandHub.CMS.Api.Controllers
             {
                 IsSuccess = result.IsSuccess,
                 Data = result.Data?.ID,
+                Message = result.Message
+            };
+        }
+
+        [HttpPut]
+        public ActionResult<OperationResult<int?>> Update([FromBody]UpdateOrganizationRequest model)
+        {
+            model.IsDeleted = false;
+            model.CreatedDate = DateTime.UtcNow;
+            var result = _organizationService.UpdateOrganization(model);
+            return new OperationResult<int?>()
+            {
+                IsSuccess = result.IsSuccess,
+                Data = result.Data?.ID,
+                Message = result.Message
+            };
+        }
+
+        [HttpDelete]
+        public ActionResult<OperationResult<bool>> Delete([FromBody]int id)
+        {
+            var result = _organizationService.DeleteOrganization(id);
+            return new OperationResult<bool>()
+            {
+                IsSuccess = result.IsSuccess,
+                Data = result.Data,
                 Message = result.Message
             };
         }

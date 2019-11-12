@@ -14,6 +14,7 @@ namespace BrandHub.Data.EF.Repositories.Organizations
     {
         HostDefinition FindByName(string hostName);
         Task<HostDefinition> FindByNameAsync(string hostName);
+        List<HostDefinition> GetByOrganization(int organizationId);
     }
 
     [ServiceTypeOf(typeof(IHostDefinitionRepository))]
@@ -22,6 +23,11 @@ namespace BrandHub.Data.EF.Repositories.Organizations
         public HostDefinitionRepository(BrandHubDbContext context) : base(context)
         {
 
+        }
+
+        public List<HostDefinition> GetByOrganization(int organizationId)
+        {
+            return this.GetQueryable().AsNoTracking().Where(x => x.OrganizationId == organizationId).ToList();
         }
 
         public HostDefinition FindByName(string hostName)
