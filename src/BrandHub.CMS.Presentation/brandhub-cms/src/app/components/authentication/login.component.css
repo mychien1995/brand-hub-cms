@@ -1,0 +1,9 @@
+@import url('../../../assets/theme/vendors/bootstrap/dist/css/bootstrap.min.css');
+@import url('../../../assets/theme/vendors/font-awesome/css/font-awesome.min.css');
+@import url('../../../assets/theme/vendors/nprogress/nprogress.css');
+@import url('../../../assets/theme/vendors/animate.css/animate.min.css');
+@import url('../../../assets/theme/build/css/custom.min.css');
+
+.login_content h1:before, .login_content h1:after{
+	display: none;
+}
