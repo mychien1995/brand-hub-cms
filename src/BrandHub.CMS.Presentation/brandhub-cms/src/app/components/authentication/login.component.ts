@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
   	this.model.Hostname = window.location.host;
   	this._authenticationService.login(this.model).subscribe(data => {
   		if(data.IsSuccess){
-  			this._router.navigate(['/dashboard']);
+  			this._router.navigate(['/']);
   		}
   		else{
   			alert(data.Message);
