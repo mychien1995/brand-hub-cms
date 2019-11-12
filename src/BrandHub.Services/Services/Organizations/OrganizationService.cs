@@ -5,6 +5,7 @@ using BrandHub.Data.EF.Repositories.Organizations;
 using BrandHub.Framework.IoC;
 using BrandHub.Models;
 using BrandHub.Models.Organizations;
+using BrandHub.Models.Shared;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,8 @@ namespace BrandHub.Services.Organizations
         OperationResult<OrganizationModel> CreateOrganization(UpdateOrganizationRequest request);
         OperationResult<OrganizationModel> UpdateOrganization(UpdateOrganizationRequest request);
         OperationResult<bool> DeleteOrganization(int id);
+
+        SearchResult<OrganizationModel> SearchOrganization(SearchOrganizationRequest request);
     }
 
     [ServiceTypeOf(typeof(IOrganizationService))]
@@ -145,6 +148,18 @@ namespace BrandHub.Services.Organizations
             _organizationRepository.Update(existingOrganization);
             _organizationRepository.SaveChanges();
             return new OperationResult<bool>(true, true);
+        }
+
+        public SearchResult<OrganizationModel> SearchOrganization(SearchOrganizationRequest request)
+        {
+            var searchResult = _organizationRepository.Search(request);
+            var result = new SearchResult<OrganizationModel>();
+            searchResult.Result.ForEach(x =>
+            {
+                result.Result.Add(x.ToModel());
+            });
+            result.Total = searchResult.Total;
+            return result;
         }
     }
 }

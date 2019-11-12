@@ -1,6 +1,7 @@
 ﻿using BrandHub.CMS.Api.Attributes;
 using BrandHub.Models;
 using BrandHub.Models.Organizations;
+using BrandHub.Models.Shared;
 using BrandHub.Models.Users;
 using BrandHub.Services.Organizations;
 using BrandHub.Services.Users;
@@ -23,6 +24,14 @@ namespace BrandHub.CMS.Api.Controllers
         {
             _organizationService = organizationService;
         }
+
+        [HttpPost]
+        public ActionResult<SearchResult<OrganizationModel>> Search([FromBody]SearchOrganizationRequest request)
+        {
+            var result = _organizationService.SearchOrganization(request);
+            return result;
+        }
+
         [HttpPost]
         public ActionResult<OperationResult<int?>> Create([FromBody]UpdateOrganizationRequest model)
         {
@@ -52,7 +61,7 @@ namespace BrandHub.CMS.Api.Controllers
         }
 
         [HttpDelete]
-        public ActionResult<OperationResult<bool>> Delete([FromBody]int id)
+        public ActionResult<OperationResult<bool>> Delete([FromQuery]int id)
         {
             var result = _organizationService.DeleteOrganization(id);
             return new OperationResult<bool>()
