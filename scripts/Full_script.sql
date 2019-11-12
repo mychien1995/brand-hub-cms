@@ -197,3 +197,9 @@ ALTER TABLE [dbo].[Provinces] ADD  CONSTRAINT [FK_Provinces_Countries_CountryId]
 ALTER TABLE [dbo].[UserRoles] ADD  CONSTRAINT [FK_UserRoles_Roles_RoleId] FOREIGN KEY([RoleId]) REFERENCES [dbo].[Roles] ([ID]) ON DELETE CASCADE;
 ALTER TABLE [dbo].[UserRoles]  ADD  CONSTRAINT [FK_UserRoles_Users_UserId] FOREIGN KEY([UserId]) REFERENCES [dbo].[Users] ([ID]) ON DELETE CASCADE;
 -- 28/10/2019 ---
+
+-- 11/12/2019 ---
+DROP INDEX IX_Organizations_ProvinceID ON Organizations;
+ALTER TABLE Organizations DROP CONSTRAINT FK_Organizations_Provinces_ProvinceID;
+ALTER TABLE Organizations DROP COLUMN ProvinceID
+ALTER TABLE Organizations ADD UpdatedDate datetime2(7)

@@ -50,7 +50,7 @@ namespace BrandHub.CMS.Api.Controllers
         public ActionResult<OperationResult<int?>> Update([FromBody]UpdateOrganizationRequest model)
         {
             model.IsDeleted = false;
-            model.CreatedDate = DateTime.UtcNow;
+            model.UpdatedDate = DateTime.UtcNow;
             var result = _organizationService.UpdateOrganization(model);
             return new OperationResult<int?>()
             {

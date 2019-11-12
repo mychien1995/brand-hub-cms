@@ -53,7 +53,7 @@ namespace BrandHub.Data.EF.Extensions
         }
         #endregion
 
-        #region Product
+        #region Organizations
         public static OrganizationModel ToModel(this Organization entity)
         {
             if (entity == null) return null;
@@ -64,6 +64,7 @@ namespace BrandHub.Data.EF.Extensions
                 IsActive = entity.IsActive,
                 IsDeleted = entity.IsDeleted,
                 CreatedDate = entity.CreatedDate,
+                UpdatedDate = entity.UpdatedDate,
                 AddressId = entity.AddressId,
             };
         }
@@ -78,6 +79,7 @@ namespace BrandHub.Data.EF.Extensions
                 IsActive = model.IsActive,
                 IsDeleted = model.IsDeleted,
                 CreatedDate = model.CreatedDate,
+                UpdatedDate = model.UpdatedDate,
                 AddressId = model.AddressId
             };
         }

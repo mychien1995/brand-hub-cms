@@ -8,6 +8,11 @@ namespace BrandHub.Models.Organizations
 {
     public class SearchOrganizationRequest : IPagingRequest
     {
+        public SearchOrganizationRequest()
+        {
+            PageIndex = 0;
+            PageSize = 10;
+        }
         public int? ID { get; set; }
         public string Name { get; set; }
         public bool? IsActive { get; set; }
