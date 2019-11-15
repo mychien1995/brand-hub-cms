@@ -1,2 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
-@import url('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css');
+@import url('./assets/theme/vendors/bootstrap/dist/css/bootstrap.min.css');
+@import url('./assets/theme/vendors/font-awesome/css/font-awesome.min.css');
+@import url('./assets/theme/vendors/nprogress/nprogress.css');
+@import url('./assets/theme/vendors/iCheck/skins/flat/green.css');
+@import url('./assets/theme/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css');
+@import url('./assets/theme/vendors/jqvmap/dist/jqvmap.min.css');
+@import url('./assets/theme/vendors/bootstrap-daterangepicker/daterangepicker.css');
+@import url('./assets/theme/build/css/custom.min.css');

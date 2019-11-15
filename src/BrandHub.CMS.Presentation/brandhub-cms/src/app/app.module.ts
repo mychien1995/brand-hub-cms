@@ -11,12 +11,18 @@ import { LocalStorageModule } from 'angular-2-local-storage';
 import { ConfigService, ConfigServiceFactory, ConfigServiceProvider } from './services/shared/config.service';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { AuthenticationInterceptor } from './interceptors/authentication.interceptor';
+import { MainlayoutComponent } from './components/layout/mainlayout.component';
+import { SidebarComponent } from './components/layout/partial/sidebar.component';
+import { TopnavComponent } from './components/layout/partial/topnav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    MainlayoutComponent,
+    SidebarComponent,
+    TopnavComponent
   ],
   imports: [
     BrowserModule,
