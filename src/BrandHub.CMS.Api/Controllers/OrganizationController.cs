@@ -13,11 +13,8 @@ using System.Threading.Tasks;
 
 namespace BrandHub.CMS.Api.Controllers
 {
-    [Route("cms/api/[controller]")]
-    [ApiController]
-    [FrameworkAuthorized]
 
-    public class OrganizationController : ControllerBase
+    public class OrganizationController : BaseController
     {
         private readonly IOrganizationService _organizationService;
         public OrganizationController(IOrganizationService organizationService)

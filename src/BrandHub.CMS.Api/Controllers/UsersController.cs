@@ -10,11 +10,8 @@ using System.Threading.Tasks;
 
 namespace BrandHub.CMS.Api.Controllers
 {
-    [Route("cms/api/[controller]")]
-    [ApiController]
-    [FrameworkAuthorized]
 
-    public class UsersController : ControllerBase
+    public class UsersController : BaseController
     {
         private readonly IUserService _userService;
         public UsersController(IUserService userService)
