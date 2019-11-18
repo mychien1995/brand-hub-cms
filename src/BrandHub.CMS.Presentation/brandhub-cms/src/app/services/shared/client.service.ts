@@ -20,9 +20,9 @@ export class ClientService {
     var requestOptions: Object = {
       responseType: 'text'
     };
-    return this._httpClient.get(url, requestOptions)
+    return this._httpClient.get(url)
       .pipe(
-        map(data => { return this.tryParse(data); })
+        map(data => { return this.tryParse<T>(data); })
       );
   }
 

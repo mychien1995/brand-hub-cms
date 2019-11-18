@@ -11,14 +11,14 @@ import { OrganizationModel } from '../../models/organizations/organization.model
 })
 export class OrganizationListingComponent implements OnInit {
 
+  organizationList : SearchResult<OrganizationModel>;
+
   constructor(private _configService: ConfigService, private _clientService: ClientService) {}
 
   ngOnInit() {
-    var organizationList: SearchResult <OrganizationModel>;
-    organizationList = new SearchResult <OrganizationModel> ();
     var url = this._configService.getEndpoint('organization/search');
-    this._clientService.get(url).subscribe(data => {
-    	console.log(data);
+    this._clientService.get<SearchResult<OrganizationModel>>(url).subscribe(data => {
+    	this.organizationList = data;
     });
   }
 

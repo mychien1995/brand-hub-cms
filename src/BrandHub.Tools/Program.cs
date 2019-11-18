@@ -10,6 +10,7 @@ namespace BrandHub.Tools
     {
         static void Main(string[] args)
         {
+            new CoreDataImporter().ImportCountries();
             new CoreDataImporter().ImportProvince("VN");
             Console.ReadLine();
         }
