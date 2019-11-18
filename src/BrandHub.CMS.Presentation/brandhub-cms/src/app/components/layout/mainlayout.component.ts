@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SidebarComponent } from './partial/sidebar.component';
-import { TopnavComponent } from './partial/sidebar.component';
+import { TopnavComponent } from './partial/topnav.component';
 
 @Component({
   selector: 'app-mainlayout',

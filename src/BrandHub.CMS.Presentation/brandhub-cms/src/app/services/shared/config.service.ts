@@ -28,6 +28,14 @@ export class ConfigService {
   	if(!this._config) return undefined;
     return this._config[key];
   }
+
+  getBaseUrl(){
+    return this.get('BASE_API_URL');
+  }
+
+  getEndpoint(url : string){
+    return `${this.get('BASE_API_URL')}${url}`;
+  }
 }
 
 

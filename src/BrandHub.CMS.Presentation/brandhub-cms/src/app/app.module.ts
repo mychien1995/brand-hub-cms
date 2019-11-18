@@ -14,6 +14,7 @@ import { AuthenticationInterceptor } from './interceptors/authentication.interce
 import { MainlayoutComponent } from './components/layout/mainlayout.component';
 import { SidebarComponent } from './components/layout/partial/sidebar.component';
 import { TopnavComponent } from './components/layout/partial/topnav.component';
+import { OrganizationListingComponent } from './components/organizations/organization-listing.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { TopnavComponent } from './components/layout/partial/topnav.component';
     DashboardComponent,
     MainlayoutComponent,
     SidebarComponent,
-    TopnavComponent
+    TopnavComponent,
+    OrganizationListingComponent
   ],
   imports: [
     BrowserModule,
