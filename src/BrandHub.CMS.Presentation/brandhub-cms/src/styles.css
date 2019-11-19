@@ -6,3 +6,11 @@
 @import url('./assets/theme/vendors/jqvmap/dist/jqvmap.min.css');
 @import url('./assets/theme/vendors/bootstrap-daterangepicker/daterangepicker.css');
 @import url('./assets/theme/build/css/custom.min.css');
+
+.right_col .content-wrapper {
+  margin-right: -10px;
+  margin-left: -10px;
+  display: block;
+  flex-wrap: wrap;
+  width: 100%;
+}
