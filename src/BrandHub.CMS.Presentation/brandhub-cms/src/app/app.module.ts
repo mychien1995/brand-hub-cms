@@ -15,6 +15,7 @@ import { MainlayoutComponent } from './components/layout/mainlayout.component';
 import { SidebarComponent } from './components/layout/partial/sidebar.component';
 import { TopnavComponent } from './components/layout/partial/topnav.component';
 import { OrganizationListingComponent } from './components/organizations/organization-listing.component';
+import { RouterLinkDirective } from './directives/routerlink.directive';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { OrganizationListingComponent } from './components/organizations/organiz
     MainlayoutComponent,
     SidebarComponent,
     TopnavComponent,
-    OrganizationListingComponent
+    OrganizationListingComponent,
+    RouterLinkDirective
   ],
   imports: [
     CommonModule,
