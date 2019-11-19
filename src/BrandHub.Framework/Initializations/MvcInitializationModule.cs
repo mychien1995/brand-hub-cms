@@ -10,7 +10,12 @@ namespace BrandHub.Framework.Initializations
     {
         public void Initialize(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc()
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
+                .AddJsonOptions(opt =>
+                {
+                    opt.UseMemberCasing();
+                });
         }
     }
 }

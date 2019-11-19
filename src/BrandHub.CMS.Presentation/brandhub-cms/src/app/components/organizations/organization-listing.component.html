@@ -1,3 +1,14 @@
-<p>
-  organization-listing works!
-</p>
+<table *ngIf="searchResult">
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>Name</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let item of searchResult.Result">
+			<td>{{item.ID}}</td>
+			<td>{{item.Name}}</td>
+		</tr>
+	</tbody>
+</table>

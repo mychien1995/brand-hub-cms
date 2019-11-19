@@ -16,13 +16,10 @@ export class ClientService {
 
   }
 
-  get <T> (url: string): Observable <T> {
-    var requestOptions: Object = {
-      responseType: 'text'
-    };
+  get<T>(url: string): Observable<T> {
     return this._httpClient.get(url)
       .pipe(
-        map(data => { return this.tryParse<T>(data); })
+        map(data => this.tryParse<T>(data))
       );
   }
 
