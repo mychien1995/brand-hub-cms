@@ -22,6 +22,13 @@ namespace BrandHub.CMS.Api.Controllers
             _organizationService = organizationService;
         }
 
+        [HttpGet("{id}")]
+        public ActionResult<OrganizationModel> Get(int id)
+        {
+            var result = _organizationService.GetOrganization(id);
+            return result;
+        }
+
         [HttpGet]
         [Route("search")]
         public ActionResult<SearchResult<OrganizationModel>> Search([FromQuery]SearchOrganizationRequest request)

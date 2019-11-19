@@ -5,6 +5,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { Guard } from './interceptors/guard.canactivate';
 import { MainlayoutComponent } from './components/layout/mainlayout.component';
 import { OrganizationListingComponent } from './components/organizations/organization-listing.component';
+import { OrganizationEditComponent } from './components/organizations/organization-edit.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -14,7 +15,8 @@ const routes: Routes = [
     canActivate: [Guard],
     children: [
       { path: '', component: DashboardComponent },
-      { path: 'organizations', component: OrganizationListingComponent }
+      { path: 'organizations', component: OrganizationListingComponent },
+      { path :'organizations/:id', component : OrganizationEditComponent }
     ]
   }
 

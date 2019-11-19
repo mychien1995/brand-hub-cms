@@ -21,6 +21,8 @@ namespace BrandHub.Services.Organizations
         OperationResult<bool> DeleteOrganization(int id);
 
         SearchResult<OrganizationModel> SearchOrganization(SearchOrganizationRequest request);
+
+        OrganizationModel GetOrganization(int id);
     }
 
     [ServiceTypeOf(typeof(IOrganizationService))]
@@ -162,6 +164,13 @@ namespace BrandHub.Services.Organizations
             });
             result.Total = searchResult.Total;
             return result;
+        }
+
+        public OrganizationModel GetOrganization(int id)
+        {
+            var organization = _organizationRepository.GetById(id);
+            if (organization != null) return organization.ToModel();
+            return null;
         }
     }
 }

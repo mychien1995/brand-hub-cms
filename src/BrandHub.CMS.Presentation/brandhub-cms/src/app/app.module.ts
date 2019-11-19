@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Injector } from '@angular/core';
 import { CommonModule } from '@angular/common';  
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +16,8 @@ import { SidebarComponent } from './components/layout/partial/sidebar.component'
 import { TopnavComponent } from './components/layout/partial/topnav.component';
 import { OrganizationListingComponent } from './components/organizations/organization-listing.component';
 import { RouterLinkDirective } from './directives/routerlink.directive';
+import { OrganizationEditComponent } from './components/organizations/organization-edit.component';
+import { setAppInjector } from './app.injector';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { RouterLinkDirective } from './directives/routerlink.directive';
     SidebarComponent,
     TopnavComponent,
     OrganizationListingComponent,
-    RouterLinkDirective
+    RouterLinkDirective,
+    OrganizationEditComponent
   ],
   imports: [
     CommonModule,
@@ -55,4 +58,10 @@ import { RouterLinkDirective } from './directives/routerlink.directive';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+
+
+export class AppModule {
+  constructor(private injector: Injector) {
+    setAppInjector(injector);
+  }
+}
