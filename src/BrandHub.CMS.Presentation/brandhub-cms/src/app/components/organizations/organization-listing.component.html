@@ -5,17 +5,34 @@
   </div>
   <div class="x-content">
     <div class="table-responsive">
-      <table *ngIf="searchResult" class="table table-striped jambo_table bulk_action">
+      <table *ngIf="searchResult" class="table table-striped jambo_table data_table">
         <thead>
           <tr class="headings">
             <th>Id</th>
             <th>Name</th>
+            <th>Address</th>
+            <th>Active</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let item of searchResult.Result">
             <td>{{item.ID}}</td>
             <td>{{item.Name}}</td>
+            <td>{{item.AddressName}}</td>
+            <td class="pure-checkbox">
+            	<input *ngIf="item.IsActive" type="checkbox" class="flat" name="table_records" checked>
+            	<input *ngIf="!item.IsActive"type="checkbox" class="flat" name="table_records">
+            	<label></label>
+            </td>
+            <td>
+            	<a href="javascript:void(0)">
+            		<i class="fa fa-pencil-square-o"></i>
+            	</a>
+            	<a href="javascript:void(0)">
+            		<i class="fa fa-trash-o"></i>
+            	</a>
+            </td>
           </tr>
         </tbody>
       </table>

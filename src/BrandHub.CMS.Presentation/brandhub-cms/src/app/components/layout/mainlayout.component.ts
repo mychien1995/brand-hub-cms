@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SidebarComponent } from './partial/sidebar.component';
 import { TopnavComponent } from './partial/topnav.component';
-
+import { } from 'jquery';
 @Component({
   selector: 'app-mainlayout',
   templateUrl: './mainlayout.component.html',
@@ -29,5 +29,6 @@ export class MainlayoutComponent implements OnInit {
       d = a < c ? c : a;
       d -= $navMenu.height() + b,
     $rightCol.css("min-height", d);
+
   }
 }

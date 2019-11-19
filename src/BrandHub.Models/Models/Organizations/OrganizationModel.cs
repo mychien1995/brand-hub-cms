@@ -14,6 +14,7 @@ namespace BrandHub.Models.Organizations
         public DateTime CreatedDate { get; set; }
         public DateTime UpdatedDate { get; set; }
         public int AddressId { get; set; }
+        public string AddressName { get; set; }
         public virtual AddressModel Address { get; set; }
         public virtual List<HostDefinitionModel> WebsiteHosts { get; set; }
     }

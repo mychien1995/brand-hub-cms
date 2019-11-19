@@ -156,7 +156,9 @@ namespace BrandHub.Services.Organizations
             var result = new SearchResult<OrganizationModel>();
             searchResult.Result.ForEach(x =>
             {
-                result.Result.Add(x.ToModel());
+                var organizationModel = x.ToModel();
+                organizationModel.AddressName = x.Address?.AddressLine;
+                result.Result.Add(organizationModel);
             });
             result.Total = searchResult.Total;
             return result;
