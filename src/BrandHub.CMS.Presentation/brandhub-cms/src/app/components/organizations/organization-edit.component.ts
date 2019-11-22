@@ -17,24 +17,18 @@ export class OrganizationEditComponent extends BaseComponent implements OnInit {
   private id: number;
   constructor() {
     super();
-    this._router.events.subscribe(ev => {
-      if (ev instanceof NavigationEnd) {
-        this.id = ev.id;
-        if (this.id) {
-          this.isEdit = true;
-        }
-      }
-    });
-    this.model = new OrganizationModel();
   }
 
   ngOnInit() {
+    this.id = this.getRouteParam('id');
+    if (this.id) {
+      this.isEdit = true;
+    } else this.model = new OrganizationModel();
+
     if (this.isEdit) {
       var id = this.id;
       var url = this._configService.getEndpoint(`organization/${id}`);
-      this._clientService.get < OrganizationModel > (url).subscribe(data => this.model = data);
-    } else {
-      this.model = new OrganizationModel();
+      this._clientService.get<OrganizationModel> (url).subscribe(data => this.model = data);
     }
   }
 
