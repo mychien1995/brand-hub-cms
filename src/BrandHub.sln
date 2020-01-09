@@ -17,6 +17,26 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrandHub.Utilities", "Brand
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrandHub.Tools", "BrandHub.Tools\BrandHub.Tools.csproj", "{556AB066-F6D6-4427-922B-03613CCC2D09}"
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "brandhub-cms", "BrandHub.CMS.Presentation\brandhub-cms\", "{D4F6071C-E83E-49FF-9BE0-B7A5E2511154}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_50346"
+		Debug.AspNetCompiler.PhysicalPath = "BrandHub.CMS.Presentation\brandhub-cms\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50346\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_50346"
+		Release.AspNetCompiler.PhysicalPath = "BrandHub.CMS.Presentation\brandhub-cms\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50346\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "50346"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +71,10 @@ Global
 		{556AB066-F6D6-4427-922B-03613CCC2D09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{556AB066-F6D6-4427-922B-03613CCC2D09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{556AB066-F6D6-4427-922B-03613CCC2D09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4F6071C-E83E-49FF-9BE0-B7A5E2511154}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4F6071C-E83E-49FF-9BE0-B7A5E2511154}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4F6071C-E83E-49FF-9BE0-B7A5E2511154}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4F6071C-E83E-49FF-9BE0-B7A5E2511154}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
