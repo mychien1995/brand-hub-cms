@@ -4,6 +4,12 @@
       "type": "BrandHub.Data.EF.DatabaseInitializationModule, BrandHub.Data.EF"
     },
     {
+      "type": "BrandHub.Data.EF.DatabaseSchemaUpdateInitializationModule, BrandHub.Data.EF"
+    },
+    {
+      "type": "BrandHub.Data.EF.DatabaseSeedingInitializationModule, BrandHub.Data.EF"
+    },
+    {
       "type": "BrandHub.Framework.Initializations.MvcInitializationModule, BrandHub.Framework"
     }
   ]

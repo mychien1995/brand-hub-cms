@@ -1,0 +1,1504 @@
+2020-01-09T17:09:12.6419233+07:00  [INF] User profile is available. Using '"C:\Users\SmartOSC\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2020-01-09T17:09:12.6661758+07:00  [INF] Creating key {6aceffb6-a045-4787-9a51-7e463b97b364} with creation date 2020-01-09 10:09:12Z, activation date 2020-01-09 10:09:12Z, and expiration date 2020-04-08 10:09:12Z. (77afce94)
+2020-01-09T17:09:12.7556239+07:00  [INF] Writing data to file '"C:\Users\SmartOSC\AppData\Local\ASP.NET\DataProtection-Keys\key-6aceffb6-a045-4787-9a51-7e463b97b364.xml"'. (da22a8b1)
+2020-01-09T17:09:12.9087160+07:00  [WRN] Unable to bind to "http://localhost:5000" on the "IPv4 loopback" interface: '"An attempt was made to access a socket in a way forbidden by its access permissions."'. (38217649)
+2020-01-09T17:09:12.9102550+07:00  [WRN] Unable to bind to "http://localhost:5000" on the "IPv6 loopback" interface: '"An attempt was made to access a socket in a way forbidden by its access permissions."'. (38217649)
+2020-01-09T17:09:12.9404288+07:00  [FTL] Unable to start Kestrel. (fc6a528d)
+System.IO.IOException: Failed to bind to address http://localhost:5000.
+ ---> System.AggregateException: One or more errors occurred. (An attempt was made to access a socket in a way forbidden by its access permissions.) (An attempt was made to access a socket in a way forbidden by its access permissions.)
+ ---> System.Net.Sockets.SocketException (10013): An attempt was made to access a socket in a way forbidden by its access permissions.
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer.<>c__DisplayClass21_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context)
+   --- End of inner exception stack trace ---
+ ---> (Inner Exception #1) System.Net.Sockets.SocketException (10013): An attempt was made to access a socket in a way forbidden by its access permissions.
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer.<>c__DisplayClass21_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context)<---
+
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(IServerAddressesFeature addresses, KestrelServerOptions serverOptions, ILogger logger, Func`2 createBinding)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+2020-01-09T17:10:32.5083418+07:00  [INF] User profile is available. Using '"C:\Users\SmartOSC\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2020-01-09T17:10:33.2804559+07:00 0HLSKTGKR9QMK:00000001 [INF] Request starting HTTP/2 GET https://localhost:8001/api/values   (ca22a1cb)
+2020-01-09T17:10:33.2960827+07:00 0HLSKTGKR9QMK:00000001 [INF] Request finished in 16.7159ms 404  (791a596a)
+2020-01-09T17:11:39.5447174+07:00 0HLSKTGKR9QMN:00000001 [INF] Request starting HTTP/1.1 POST https://localhost:8001/api/token application/json 73 (ca22a1cb)
+2020-01-09T17:11:39.5824700+07:00 0HLSKTGKR9QMN:00000001 [INF] Request finished in 38.0106ms 404  (791a596a)
+2020-01-09T17:11:48.2317480+07:00 0HLSKTGKR9QMN:00000002 [INF] Request starting HTTP/1.1 POST https://localhost:8001/cms/api/token application/json 73 (ca22a1cb)
+2020-01-09T17:11:48.2418101+07:00 0HLSKTGKR9QMN:00000002 [INF] Request finished in 5.5268ms 404  (791a596a)
+2020-01-09T17:11:59.8666276+07:00 0HLSKTGKR9QMN:00000003 [INF] Request starting HTTP/1.1 POST https://localhost:8001/cms/api/Authentication/token application/json 73 (ca22a1cb)
+2020-01-09T17:11:59.8701987+07:00 0HLSKTGKR9QMN:00000003 [INF] Request finished in 2.8428ms 404  (791a596a)
+2020-01-09T17:12:05.9513187+07:00 0HLSKTGKR9QMN:00000004 [INF] Request starting HTTP/1.1 POST https://localhost:8001/cms/api/authentication/token application/json 73 (ca22a1cb)
+2020-01-09T17:12:05.9551874+07:00 0HLSKTGKR9QMN:00000004 [INF] Request finished in 5.4475ms 404  (791a596a)
+2020-01-09T17:12:28.5147369+07:00 0HLSKTGKR9QMN:00000005 [INF] Request starting HTTP/1.1 POST https://localhost:8001/cms/api/authentication/token application/json 73 (ca22a1cb)
+2020-01-09T17:12:28.5201252+07:00 0HLSKTGKR9QMN:00000005 [INF] Request finished in 4.8078ms 404  (791a596a)
+2020-01-09T17:13:26.0193448+07:00  [INF] User profile is available. Using '"C:\Users\SmartOSC\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2020-01-09T17:13:26.5036010+07:00 0HLSKTI8GFCFK:00000001 [INF] Request starting HTTP/2 GET https://localhost:8001/api/values   (ca22a1cb)
+2020-01-09T17:13:26.5137569+07:00 0HLSKTI8GFCFK:00000001 [INF] Request finished in 10.6635ms 404  (791a596a)
+2020-01-09T17:13:29.1453446+07:00 0HLSKTI8GFCFN:00000001 [INF] Request starting HTTP/1.1 POST https://localhost:8001/cms/api/authentication/token application/json 73 (ca22a1cb)
+2020-01-09T17:13:29.1589097+07:00 0HLSKTI8GFCFN:00000001 [INF] Request finished in 12.8341ms 404  (791a596a)
+2020-01-09T17:14:13.6824383+07:00 0HLSKTI8GFCFN:00000002 [INF] Request starting HTTP/1.1 POST https://localhost:8001/cms/api/Authentication/token application/json 73 (ca22a1cb)
+2020-01-09T17:14:13.6862761+07:00 0HLSKTI8GFCFN:00000002 [INF] Request finished in 4.3616ms 404  (791a596a)
+2020-01-09T17:15:42.8915143+07:00  [INF] User profile is available. Using '"C:\Users\SmartOSC\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2020-01-09T17:15:43.5461071+07:00 0HLSKTJHBGV1V:00000001 [INF] Request starting HTTP/2 GET https://localhost:8001/api/values   (ca22a1cb)
+2020-01-09T17:15:43.7243483+07:00 0HLSKTJHBGV1V:00000001 [INF] Request finished in 180.527ms 404  (791a596a)
+2020-01-09T17:15:45.7230918+07:00 0HLSKTJHBGV21:00000001 [INF] Request starting HTTP/1.1 POST https://localhost:8001/cms/api/Authentication/token application/json 73 (ca22a1cb)
+2020-01-09T17:15:45.7384573+07:00 0HLSKTJHBGV21:00000001 [INF] Request finished in 14.992ms 404  (791a596a)
+2020-01-09T17:18:25.7204071+07:00  [INF] User profile is available. Using '"C:\Users\SmartOSC\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2020-01-09T17:18:26.2209377+07:00 0HLSKTL1PSS15:00000001 [INF] Request starting HTTP/2 GET https://localhost:8001/api/values   (ca22a1cb)
+2020-01-09T17:18:26.2521629+07:00 0HLSKTL1PSS15:00000001 [INF] Executing endpoint '"BrandHub.CMS.Api.Controllers.ValuesController.Get (BrandHub.CMS.Api)"' (500cc934)
+2020-01-09T17:18:26.2985130+07:00 0HLSKTL1PSS15:00000001 [INF] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get()" on controller "BrandHub.CMS.Api.Controllers.ValuesController" ("BrandHub.CMS.Api"). (122b2fdf)
+2020-01-09T17:18:26.3084341+07:00 0HLSKTL1PSS15:00000001 [INF] Executing ObjectResult, writing value of type '"System.String[]"'. (8a1b66c8)
+2020-01-09T17:18:26.3628384+07:00 0HLSKTL1PSS15:00000001 [INF] Executed action "BrandHub.CMS.Api.Controllers.ValuesController.Get (BrandHub.CMS.Api)" in 54.9793ms (afa2e885)
+2020-01-09T17:18:26.3649388+07:00 0HLSKTL1PSS15:00000001 [INF] Executed endpoint '"BrandHub.CMS.Api.Controllers.ValuesController.Get (BrandHub.CMS.Api)"' (99874f2b)
+2020-01-09T17:18:26.3681855+07:00 0HLSKTL1PSS15:00000001 [INF] Request finished in 150.0275ms 200 application/json; charset=utf-8 (791a596a)
+2020-01-09T17:18:26.3880400+07:00 0HLSKTL1PSS15:00000003 [INF] Request starting HTTP/2 GET https://localhost:8001/favicon.ico   (ca22a1cb)
+2020-01-09T17:18:26.3912970+07:00 0HLSKTL1PSS15:00000003 [INF] Request finished in 3.5468ms 404  (791a596a)
+2020-01-09T17:18:28.5640586+07:00 0HLSKTL1PSS17:00000001 [INF] Request starting HTTP/1.1 POST https://localhost:8001/cms/api/Authentication/token application/json 73 (ca22a1cb)
+2020-01-09T17:18:28.5669191+07:00 0HLSKTL1PSS17:00000001 [INF] Executing endpoint '"BrandHub.CMS.Api.Controllers.AuthenticationController.Authenticate (BrandHub.CMS.Api)"' (500cc934)
+2020-01-09T17:18:28.5867935+07:00 0HLSKTL1PSS17:00000001 [INF] Route matched with "{action = \"Authenticate\", controller = \"Authentication\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Authenticate(BrandHub.CMS.Api.Models.UserLoginModel)" on controller "BrandHub.CMS.Api.Controllers.AuthenticationController" ("BrandHub.CMS.Api"). (122b2fdf)
+2020-01-09T17:18:28.6168629+07:00 0HLSKTL1PSS17:00000001 [INF] Entity Framework Core "3.1.0" initialized '"BrandHubDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-01-09T17:18:31.3037253+07:00 0HLSKTL1PSS17:00000001 [INF] Executed DbCommand ("11"ms) [Parameters=["@__username_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[ID], [u].[CreatedDate], [u].[Email], [u].[Fullname], [u].[IsActive], [u].[IsDeleted], [u].[IsEmailConfirmed], [u].[LastLoginDate], [u].[PasswordHash], [u].[PasswordSalt], [u].[PhoneNumber], [u].[UpdatedDate], [u].[Username]
+FROM [Users] AS [u]
+WHERE [u].[Username] = @__username_0" (0723d8ff)
+2020-01-09T17:18:31.3497740+07:00 0HLSKTL1PSS17:00000001 [INF] Executed DbCommand ("3"ms) [Parameters=["@__model_ID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[RoleId] AS [ID], [r].[RoleName]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[ID]
+WHERE [u].[UserId] = @__model_ID_0" (0723d8ff)
+2020-01-09T17:18:35.1481691+07:00 0HLSKTL1PSS17:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__userId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[ID], [u].[ExpiredTime], [u].[StartedTime], [u].[UserId], [u].[Value]
+FROM [UserTokens] AS [u]
+WHERE [u].[UserId] = @__userId_0" (0723d8ff)
+2020-01-09T17:18:35.2271823+07:00 0HLSKTL1PSS17:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Int32), @p3='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [UserTokens] ([ExpiredTime], [StartedTime], [UserId], [Value])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [ID]
+FROM [UserTokens]
+WHERE @@ROWCOUNT = 1 AND [ID] = scope_identity();" (0723d8ff)
+2020-01-09T17:18:38.6778556+07:00 0HLSKTL1PSS17:00000001 [INF] Executing ObjectResult, writing value of type '"System.String"'. (8a1b66c8)
+2020-01-09T17:18:38.6872605+07:00 0HLSKTL1PSS17:00000001 [INF] Executed action "BrandHub.CMS.Api.Controllers.AuthenticationController.Authenticate (BrandHub.CMS.Api)" in 10097.1854ms (afa2e885)
+2020-01-09T17:18:38.6895155+07:00 0HLSKTL1PSS17:00000001 [INF] Executed endpoint '"BrandHub.CMS.Api.Controllers.AuthenticationController.Authenticate (BrandHub.CMS.Api)"' (99874f2b)
+2020-01-09T17:18:38.6988974+07:00 0HLSKTL1PSS17:00000001 [INF] Request finished in 10133.4013ms 200 text/plain; charset=utf-8 (791a596a)
+2020-01-09T17:22:07.0128285+07:00 0HLSKTL1PSS18:00000001 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:8000/cms/api/authentication/token   (ca22a1cb)
+2020-01-09T17:22:07.0193894+07:00 0HLSKTL1PSS18:00000001 [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:22:07.0225330+07:00 0HLSKTL1PSS18:00000001 [INF] Request finished in 10.0427ms 204  (791a596a)
+2020-01-09T17:22:07.0380294+07:00 0HLSKTL1PSS18:00000002 [INF] Request starting HTTP/1.1 POST http://localhost:8000/cms/api/authentication/token application/json 71 (ca22a1cb)
+2020-01-09T17:22:07.0400859+07:00 0HLSKTL1PSS18:00000002 [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:22:07.0701744+07:00 0HLSKTL1PSS18:00000002 [INF] Request finished in 32.7541ms 307  (791a596a)
+2020-01-09T17:22:07.0808409+07:00 0HLSKTL1PSS19:00000001 [INF] Request starting HTTP/2 OPTIONS https://localhost:8001/cms/api/authentication/token   (ca22a1cb)
+2020-01-09T17:22:07.0818681+07:00 0HLSKTL1PSS19:00000001 [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:22:07.0834662+07:00 0HLSKTL1PSS19:00000001 [INF] Request finished in 2.5739ms 204  (791a596a)
+2020-01-09T17:22:07.0855705+07:00 0HLSKTL1PSS19:00000003 [INF] Request starting HTTP/2 POST https://localhost:8001/cms/api/authentication/token application/json 71 (ca22a1cb)
+2020-01-09T17:22:07.0865843+07:00 0HLSKTL1PSS19:00000003 [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:22:07.0885917+07:00 0HLSKTL1PSS19:00000003 [INF] Executing endpoint '"BrandHub.CMS.Api.Controllers.AuthenticationController.Authenticate (BrandHub.CMS.Api)"' (500cc934)
+2020-01-09T17:22:07.0900220+07:00 0HLSKTL1PSS19:00000003 [INF] Route matched with "{action = \"Authenticate\", controller = \"Authentication\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Authenticate(BrandHub.CMS.Api.Models.UserLoginModel)" on controller "BrandHub.CMS.Api.Controllers.AuthenticationController" ("BrandHub.CMS.Api"). (122b2fdf)
+2020-01-09T17:22:07.0973855+07:00 0HLSKTL1PSS19:00000003 [INF] Entity Framework Core "3.1.0" initialized '"BrandHubDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-01-09T17:22:07.1075094+07:00 0HLSKTL1PSS19:00000003 [INF] Executed DbCommand ("4"ms) [Parameters=["@__username_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[ID], [u].[CreatedDate], [u].[Email], [u].[Fullname], [u].[IsActive], [u].[IsDeleted], [u].[IsEmailConfirmed], [u].[LastLoginDate], [u].[PasswordHash], [u].[PasswordSalt], [u].[PhoneNumber], [u].[UpdatedDate], [u].[Username]
+FROM [Users] AS [u]
+WHERE [u].[Username] = @__username_0" (0723d8ff)
+2020-01-09T17:22:07.1128098+07:00 0HLSKTL1PSS19:00000003 [INF] Executed DbCommand ("2"ms) [Parameters=["@__model_ID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[RoleId] AS [ID], [r].[RoleName]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[ID]
+WHERE [u].[UserId] = @__model_ID_0" (0723d8ff)
+2020-01-09T17:22:07.1203459+07:00 0HLSKTL1PSS19:00000003 [INF] Executed DbCommand ("5"ms) [Parameters=["@__userId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[ID], [u].[ExpiredTime], [u].[StartedTime], [u].[UserId], [u].[Value]
+FROM [UserTokens] AS [u]
+WHERE [u].[UserId] = @__userId_0" (0723d8ff)
+2020-01-09T17:22:07.1220917+07:00 0HLSKTL1PSS19:00000003 [INF] Executing ObjectResult, writing value of type '"System.String"'. (8a1b66c8)
+2020-01-09T17:22:07.1235024+07:00 0HLSKTL1PSS19:00000003 [INF] Executed action "BrandHub.CMS.Api.Controllers.AuthenticationController.Authenticate (BrandHub.CMS.Api)" in 32.3657ms (afa2e885)
+2020-01-09T17:22:07.1245360+07:00 0HLSKTL1PSS19:00000003 [INF] Executed endpoint '"BrandHub.CMS.Api.Controllers.AuthenticationController.Authenticate (BrandHub.CMS.Api)"' (99874f2b)
+2020-01-09T17:22:07.1258537+07:00 0HLSKTL1PSS19:00000003 [INF] Request finished in 40.3353ms 200 text/plain; charset=utf-8 (791a596a)
+2020-01-09T17:22:10.3013504+07:00 0HLSKTL1PSS18:00000003 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:8000/cms/api/organization/search   (ca22a1cb)
+2020-01-09T17:22:10.3040981+07:00 0HLSKTL1PSS18:00000003 [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:22:10.3067620+07:00 0HLSKTL1PSS18:00000003 [INF] Request finished in 7.1685ms 204  (791a596a)
+2020-01-09T17:22:10.3114757+07:00 0HLSKTL1PSS18:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:8000/cms/api/organization/search   (ca22a1cb)
+2020-01-09T17:22:10.3134601+07:00 0HLSKTL1PSS18:00000004 [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:22:10.3157705+07:00 0HLSKTL1PSS18:00000004 [INF] Request finished in 5.6466ms 307  (791a596a)
+2020-01-09T17:22:10.3197689+07:00 0HLSKTL1PSS19:00000005 [INF] Request starting HTTP/2 OPTIONS https://localhost:8001/cms/api/organization/search   (ca22a1cb)
+2020-01-09T17:22:10.3218594+07:00 0HLSKTL1PSS19:00000005 [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:22:10.3238489+07:00 0HLSKTL1PSS19:00000005 [INF] Request finished in 5.1151ms 204  (791a596a)
+2020-01-09T17:22:10.3274375+07:00 0HLSKTL1PSS19:00000007 [INF] Request starting HTTP/2 GET https://localhost:8001/cms/api/organization/search   (ca22a1cb)
+2020-01-09T17:22:10.3290088+07:00 0HLSKTL1PSS19:00000007 [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:22:10.3306532+07:00 0HLSKTL1PSS19:00000007 [INF] Executing endpoint '"BrandHub.CMS.Api.Controllers.OrganizationController.Search (BrandHub.CMS.Api)"' (500cc934)
+2020-01-09T17:22:10.3353684+07:00 0HLSKTL1PSS19:00000007 [INF] Entity Framework Core "3.1.0" initialized '"BrandHubDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-01-09T17:22:10.3464014+07:00 0HLSKTL1PSS19:00000007 [INF] Route matched with "{action = \"Search\", controller = \"Organization\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[BrandHub.Models.Shared.SearchResult`1[BrandHub.Models.Organizations.OrganizationModel]] Search(BrandHub.Models.Organizations.SearchOrganizationRequest)" on controller "BrandHub.CMS.Api.Controllers.OrganizationController" ("BrandHub.CMS.Api"). (122b2fdf)
+2020-01-09T17:22:10.3584368+07:00 0HLSKTL1PSS19:00000007 [INF] Executed DbCommand ("3"ms) [Parameters=["@__token_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[ID], [u].[ExpiredTime], [u].[StartedTime], [u].[UserId], [u].[Value]
+FROM [UserTokens] AS [u]
+WHERE [u].[Value] = @__token_0" (0723d8ff)
+2020-01-09T17:22:10.3702017+07:00 0HLSKTL1PSS19:00000007 [INF] Executed DbCommand ("1"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[ID], [u].[CreatedDate], [u].[Email], [u].[Fullname], [u].[IsActive], [u].[IsDeleted], [u].[IsEmailConfirmed], [u].[LastLoginDate], [u].[PasswordHash], [u].[PasswordSalt], [u].[PhoneNumber], [u].[UpdatedDate], [u].[Username]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__p_0" (0723d8ff)
+2020-01-09T17:22:10.3728510+07:00 0HLSKTL1PSS19:00000007 [INF] Executed DbCommand ("0"ms) [Parameters=["@__model_ID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[RoleId] AS [ID], [r].[RoleName]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[ID]
+WHERE [u].[UserId] = @__model_ID_0" (0723d8ff)
+2020-01-09T17:22:10.3930224+07:00 0HLSKTL1PSS19:00000007 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Organizations] AS [o]" (0723d8ff)
+2020-01-09T17:22:10.4283844+07:00 0HLSKTL1PSS19:00000007 [ERR] Failed executing DbCommand ("9"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[ID], [t].[AddressId], [t].[CreatedDate], [t].[IsActive], [t].[IsDeleted], [t].[Name], [t].[ProvinceID], [t].[UpdatedDate], [a].[ID], [a].[AddressLine], [a].[CountryId], [a].[DistrictId], [a].[IsDeleted], [a].[ProvinceId]
+FROM (
+    SELECT [o].[ID], [o].[AddressId], [o].[CreatedDate], [o].[IsActive], [o].[IsDeleted], [o].[Name], [o].[ProvinceID], [o].[UpdatedDate]
+    FROM [Organizations] AS [o]
+    ORDER BY [o].[CreatedDate]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [Addresses] AS [a] ON [t].[AddressId] = [a].[ID]
+ORDER BY [t].[CreatedDate]" (627a98df)
+2020-01-09T17:22:10.4658377+07:00 0HLSKTL1PSS19:00000007 [ERR] An exception occurred while iterating over the results of a query for context type '"BrandHub.Data.EF.Databases.BrandHubDbContext"'."
+""Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ProvinceID'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:fa95378e-5d3b-4a6e-891c-e89706564e99
+Error Number:207,State:1,Class:16" (f5c7ac34)
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ProvinceID'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+ClientConnectionId:fa95378e-5d3b-4a6e-891c-e89706564e99
+Error Number:207,State:1,Class:16
+2020-01-09T17:22:21.8897613+07:00 0HLSKTL1PSS19:00000007 [ERR]  (00000000)
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ProvinceID'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BrandHub.Data.EF.Repositories.Organizations.OrganizationRepository.Search(SearchOrganizationRequest request) in D:\Projects\Brandhub\src\BrandHub.Data.EF\Repositories\Organizations\OrganizationRepository.cs:line 44
+   at BrandHub.Services.Organizations.OrganizationService.SearchOrganization(SearchOrganizationRequest request) in D:\Projects\Brandhub\src\BrandHub.Services\Services\Organizations\OrganizationService.cs:line 157
+   at BrandHub.CMS.Api.Controllers.OrganizationController.Search(SearchOrganizationRequest request) in D:\Projects\Brandhub\src\BrandHub.CMS.Api\Controllers\OrganizationController.cs:line 36
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ExceptionContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResourceFilter()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+ClientConnectionId:fa95378e-5d3b-4a6e-891c-e89706564e99
+Error Number:207,State:1,Class:16
+2020-01-09T17:22:21.8919354+07:00 0HLSKTL1PSS19:00000007 [INF] Executed action "BrandHub.CMS.Api.Controllers.OrganizationController.Search (BrandHub.CMS.Api)" in 11543.9617ms (afa2e885)
+2020-01-09T17:22:21.8953310+07:00 0HLSKTL1PSS19:00000007 [INF] Executed endpoint '"BrandHub.CMS.Api.Controllers.OrganizationController.Search (BrandHub.CMS.Api)"' (99874f2b)
+2020-01-09T17:22:21.9061385+07:00 0HLSKTL1PSS19:00000007 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ProvinceID'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BrandHub.Data.EF.Repositories.Organizations.OrganizationRepository.Search(SearchOrganizationRequest request) in D:\Projects\Brandhub\src\BrandHub.Data.EF\Repositories\Organizations\OrganizationRepository.cs:line 44
+   at BrandHub.Services.Organizations.OrganizationService.SearchOrganization(SearchOrganizationRequest request) in D:\Projects\Brandhub\src\BrandHub.Services\Services\Organizations\OrganizationService.cs:line 157
+   at BrandHub.CMS.Api.Controllers.OrganizationController.Search(SearchOrganizationRequest request) in D:\Projects\Brandhub\src\BrandHub.CMS.Api\Controllers\OrganizationController.cs:line 36
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ExceptionContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResourceFilter()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+ClientConnectionId:fa95378e-5d3b-4a6e-891c-e89706564e99
+Error Number:207,State:1,Class:16
+2020-01-09T17:22:21.9127455+07:00 0HLSKTL1PSS19:00000007 [INF] Request finished in 11585.3571ms 500 text/plain (791a596a)
+2020-01-09T17:26:46.7483749+07:00  [INF] User profile is available. Using '"C:\Users\SmartOSC\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2020-01-09T17:26:47.5412245+07:00 0HLSKTPN78POV:00000001 [INF] Request starting HTTP/2 GET https://localhost:8001/api/values   (ca22a1cb)
+2020-01-09T17:26:47.5731974+07:00 0HLSKTPN78POV:00000001 [INF] Executing endpoint '"BrandHub.CMS.Api.Controllers.ValuesController.Get (BrandHub.CMS.Api)"' (500cc934)
+2020-01-09T17:26:47.5995257+07:00 0HLSKTPN78POV:00000001 [INF] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get()" on controller "BrandHub.CMS.Api.Controllers.ValuesController" ("BrandHub.CMS.Api"). (122b2fdf)
+2020-01-09T17:26:47.6053917+07:00 0HLSKTPN78POV:00000001 [INF] Executing ObjectResult, writing value of type '"System.String[]"'. (8a1b66c8)
+2020-01-09T17:26:47.6466800+07:00 0HLSKTPN78POV:00000001 [INF] Executed action "BrandHub.CMS.Api.Controllers.ValuesController.Get (BrandHub.CMS.Api)" in 38.5735ms (afa2e885)
+2020-01-09T17:26:47.6486594+07:00 0HLSKTPN78POV:00000001 [INF] Executed endpoint '"BrandHub.CMS.Api.Controllers.ValuesController.Get (BrandHub.CMS.Api)"' (99874f2b)
+2020-01-09T17:26:47.6518459+07:00 0HLSKTPN78POV:00000001 [INF] Request finished in 113.673ms 200 application/json; charset=utf-8 (791a596a)
+2020-01-09T17:26:55.0546280+07:00 0HLSKTPN78PP0:00000001 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:8000/cms/api/organization/search   (ca22a1cb)
+2020-01-09T17:26:55.0609248+07:00 0HLSKTPN78PP0:00000001 [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:26:55.0638761+07:00 0HLSKTPN78PP0:00000001 [INF] Request finished in 9.5113ms 204  (791a596a)
+2020-01-09T17:26:55.0758237+07:00 0HLSKTPN78PP0:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:8000/cms/api/organization/search   (ca22a1cb)
+2020-01-09T17:26:55.0773645+07:00 0HLSKTPN78PP0:00000002 [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:26:55.0852172+07:00 0HLSKTPN78PP0:00000002 [INF] Request finished in 8.7946ms 307  (791a596a)
+2020-01-09T17:26:55.0942679+07:00 0HLSKTPN78PP1:00000001 [INF] Request starting HTTP/2 OPTIONS https://localhost:8001/cms/api/organization/search   (ca22a1cb)
+2020-01-09T17:26:55.0954996+07:00 0HLSKTPN78PP1:00000001 [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:26:55.0974650+07:00 0HLSKTPN78PP1:00000001 [INF] Request finished in 3.1436ms 204  (791a596a)
+2020-01-09T17:26:55.1032277+07:00 0HLSKTPN78PP1:00000003 [INF] Request starting HTTP/2 GET https://localhost:8001/cms/api/organization/search   (ca22a1cb)
+2020-01-09T17:26:55.1054577+07:00 0HLSKTPN78PP1:00000003 [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:26:55.1082298+07:00 0HLSKTPN78PP1:00000003 [INF] Executing endpoint '"BrandHub.CMS.Api.Controllers.OrganizationController.Search (BrandHub.CMS.Api)"' (500cc934)
+2020-01-09T17:26:55.1536440+07:00 0HLSKTPN78PP1:00000003 [INF] Entity Framework Core "3.1.0" initialized '"BrandHubDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-01-09T17:26:55.1666464+07:00 0HLSKTPN78PP1:00000003 [INF] Route matched with "{action = \"Search\", controller = \"Organization\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[BrandHub.Models.Shared.SearchResult`1[BrandHub.Models.Organizations.OrganizationModel]] Search(BrandHub.Models.Organizations.SearchOrganizationRequest)" on controller "BrandHub.CMS.Api.Controllers.OrganizationController" ("BrandHub.CMS.Api"). (122b2fdf)
+2020-01-09T17:26:55.1837657+07:00 0HLSKTPN78PP1:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@__token_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[ID], [u].[ExpiredTime], [u].[StartedTime], [u].[UserId], [u].[Value]
+FROM [UserTokens] AS [u]
+WHERE [u].[Value] = @__token_0" (0723d8ff)
+2020-01-09T17:26:55.1861337+07:00 0HLSKTPN78PP1:00000003 [INF] Authorization failed for the request at filter '"BrandHub.CMS.Api.Filters.FrameworkAuthorizedFilter"'. (8b6446cb)
+2020-01-09T17:26:55.1888000+07:00 0HLSKTPN78PP1:00000003 [INF] Executing ObjectResult, writing value of type '"Microsoft.AspNetCore.Mvc.ProblemDetails"'. (8a1b66c8)
+2020-01-09T17:26:55.2111840+07:00 0HLSKTPN78PP1:00000003 [INF] Executed action "BrandHub.CMS.Api.Controllers.OrganizationController.Search (BrandHub.CMS.Api)" in 43.0651ms (afa2e885)
+2020-01-09T17:26:55.2125841+07:00 0HLSKTPN78PP1:00000003 [INF] Executed endpoint '"BrandHub.CMS.Api.Controllers.OrganizationController.Search (BrandHub.CMS.Api)"' (99874f2b)
+2020-01-09T17:26:55.2176253+07:00 0HLSKTPN78PP1:00000003 [INF] Request finished in 114.5402ms 401 application/problem+json; charset=utf-8 (791a596a)
+2020-01-09T17:26:58.2952934+07:00 0HLSKTPN78PP0:00000003 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:8000/cms/api/authentication/token   (ca22a1cb)
+2020-01-09T17:26:58.2981609+07:00 0HLSKTPN78PP0:00000003 [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:26:58.3002418+07:00 0HLSKTPN78PP0:00000003 [INF] Request finished in 5.6039ms 204  (791a596a)
+2020-01-09T17:26:58.3029946+07:00 0HLSKTPN78PP0:00000004 [INF] Request starting HTTP/1.1 POST http://localhost:8000/cms/api/authentication/token application/json 71 (ca22a1cb)
+2020-01-09T17:26:58.3046886+07:00 0HLSKTPN78PP0:00000004 [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:26:58.3062951+07:00 0HLSKTPN78PP0:00000004 [INF] Request finished in 3.5404ms 307  (791a596a)
+2020-01-09T17:26:58.3089578+07:00 0HLSKTPN78PP1:00000005 [INF] Request starting HTTP/2 OPTIONS https://localhost:8001/cms/api/authentication/token   (ca22a1cb)
+2020-01-09T17:26:58.3100959+07:00 0HLSKTPN78PP1:00000005 [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:26:58.3118018+07:00 0HLSKTPN78PP1:00000005 [INF] Request finished in 2.8633ms 204  (791a596a)
+2020-01-09T17:26:58.3140128+07:00 0HLSKTPN78PP1:00000007 [INF] Request starting HTTP/2 POST https://localhost:8001/cms/api/authentication/token application/json 71 (ca22a1cb)
+2020-01-09T17:26:58.3150547+07:00 0HLSKTPN78PP1:00000007 [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:26:58.3170736+07:00 0HLSKTPN78PP1:00000007 [INF] Executing endpoint '"BrandHub.CMS.Api.Controllers.AuthenticationController.Authenticate (BrandHub.CMS.Api)"' (500cc934)
+2020-01-09T17:26:58.3234006+07:00 0HLSKTPN78PP1:00000007 [INF] Route matched with "{action = \"Authenticate\", controller = \"Authentication\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Authenticate(BrandHub.CMS.Api.Models.UserLoginModel)" on controller "BrandHub.CMS.Api.Controllers.AuthenticationController" ("BrandHub.CMS.Api"). (122b2fdf)
+2020-01-09T17:26:58.3308588+07:00 0HLSKTPN78PP1:00000007 [INF] Entity Framework Core "3.1.0" initialized '"BrandHubDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-01-09T17:26:58.3831580+07:00 0HLSKTPN78PP1:00000007 [INF] Executed DbCommand ("12"ms) [Parameters=["@__username_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[ID], [u].[CreatedDate], [u].[Email], [u].[Fullname], [u].[IsActive], [u].[IsDeleted], [u].[IsEmailConfirmed], [u].[LastLoginDate], [u].[PasswordHash], [u].[PasswordSalt], [u].[PhoneNumber], [u].[UpdatedDate], [u].[Username]
+FROM [Users] AS [u]
+WHERE [u].[Username] = @__username_0" (0723d8ff)
+2020-01-09T17:26:58.4280579+07:00 0HLSKTPN78PP1:00000007 [INF] Executed DbCommand ("6"ms) [Parameters=["@__model_ID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[RoleId] AS [ID], [r].[RoleName]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[ID]
+WHERE [u].[UserId] = @__model_ID_0" (0723d8ff)
+2020-01-09T17:26:58.4336720+07:00 0HLSKTPN78PP1:00000007 [INF] Executed DbCommand ("1"ms) [Parameters=["@__userId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[ID], [u].[ExpiredTime], [u].[StartedTime], [u].[UserId], [u].[Value]
+FROM [UserTokens] AS [u]
+WHERE [u].[UserId] = @__userId_0" (0723d8ff)
+2020-01-09T17:26:58.4443792+07:00 0HLSKTPN78PP1:00000007 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Int32), @p3='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [UserTokens] ([ExpiredTime], [StartedTime], [UserId], [Value])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [ID]
+FROM [UserTokens]
+WHERE @@ROWCOUNT = 1 AND [ID] = scope_identity();" (0723d8ff)
+2020-01-09T17:26:58.4502381+07:00 0HLSKTPN78PP1:00000007 [INF] Executing ObjectResult, writing value of type '"System.String"'. (8a1b66c8)
+2020-01-09T17:26:58.4531083+07:00 0HLSKTPN78PP1:00000007 [INF] Executed action "BrandHub.CMS.Api.Controllers.AuthenticationController.Authenticate (BrandHub.CMS.Api)" in 128.36ms (afa2e885)
+2020-01-09T17:26:58.4548962+07:00 0HLSKTPN78PP1:00000007 [INF] Executed endpoint '"BrandHub.CMS.Api.Controllers.AuthenticationController.Authenticate (BrandHub.CMS.Api)"' (99874f2b)
+2020-01-09T17:26:58.4573093+07:00 0HLSKTPN78PP1:00000007 [INF] Request finished in 143.3218ms 200 text/plain; charset=utf-8 (791a596a)
+2020-01-09T17:26:59.4091111+07:00 0HLSKTPN78PP0:00000005 [INF] Request starting HTTP/1.1 GET http://localhost:8000/cms/api/organization/search   (ca22a1cb)
+2020-01-09T17:26:59.4118165+07:00 0HLSKTPN78PP0:00000005 [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:26:59.4135670+07:00 0HLSKTPN78PP0:00000005 [INF] Request finished in 4.7979ms 307  (791a596a)
+2020-01-09T17:26:59.4163566+07:00 0HLSKTPN78PP1:00000009 [INF] Request starting HTTP/2 GET https://localhost:8001/cms/api/organization/search   (ca22a1cb)
+2020-01-09T17:26:59.4173748+07:00 0HLSKTPN78PP1:00000009 [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:26:59.4186506+07:00 0HLSKTPN78PP1:00000009 [INF] Executing endpoint '"BrandHub.CMS.Api.Controllers.OrganizationController.Search (BrandHub.CMS.Api)"' (500cc934)
+2020-01-09T17:26:59.4219847+07:00 0HLSKTPN78PP1:00000009 [INF] Entity Framework Core "3.1.0" initialized '"BrandHubDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-01-09T17:26:59.4246967+07:00 0HLSKTPN78PP1:00000009 [INF] Route matched with "{action = \"Search\", controller = \"Organization\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[BrandHub.Models.Shared.SearchResult`1[BrandHub.Models.Organizations.OrganizationModel]] Search(BrandHub.Models.Organizations.SearchOrganizationRequest)" on controller "BrandHub.CMS.Api.Controllers.OrganizationController" ("BrandHub.CMS.Api"). (122b2fdf)
+2020-01-09T17:26:59.4301997+07:00 0HLSKTPN78PP1:00000009 [INF] Executed DbCommand ("0"ms) [Parameters=["@__token_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[ID], [u].[ExpiredTime], [u].[StartedTime], [u].[UserId], [u].[Value]
+FROM [UserTokens] AS [u]
+WHERE [u].[Value] = @__token_0" (0723d8ff)
+2020-01-09T17:26:59.4429929+07:00 0HLSKTPN78PP1:00000009 [INF] Executed DbCommand ("1"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[ID], [u].[CreatedDate], [u].[Email], [u].[Fullname], [u].[IsActive], [u].[IsDeleted], [u].[IsEmailConfirmed], [u].[LastLoginDate], [u].[PasswordHash], [u].[PasswordSalt], [u].[PhoneNumber], [u].[UpdatedDate], [u].[Username]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__p_0" (0723d8ff)
+2020-01-09T17:26:59.4483667+07:00 0HLSKTPN78PP1:00000009 [INF] Executed DbCommand ("0"ms) [Parameters=["@__model_ID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[RoleId] AS [ID], [r].[RoleName]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[ID]
+WHERE [u].[UserId] = @__model_ID_0" (0723d8ff)
+2020-01-09T17:26:59.4680658+07:00 0HLSKTPN78PP1:00000009 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Organizations] AS [o]" (0723d8ff)
+2020-01-09T17:26:59.4954379+07:00 0HLSKTPN78PP1:00000009 [ERR] Failed executing DbCommand ("2"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[ID], [t].[AddressId], [t].[CreatedDate], [t].[IsActive], [t].[IsDeleted], [t].[Name], [t].[ProvinceID], [t].[UpdatedDate], [a].[ID], [a].[AddressLine], [a].[CountryId], [a].[DistrictId], [a].[IsDeleted], [a].[ProvinceId]
+FROM (
+    SELECT [o].[ID], [o].[AddressId], [o].[CreatedDate], [o].[IsActive], [o].[IsDeleted], [o].[Name], [o].[ProvinceID], [o].[UpdatedDate]
+    FROM [Organizations] AS [o]
+    ORDER BY [o].[CreatedDate]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [Addresses] AS [a] ON [t].[AddressId] = [a].[ID]
+ORDER BY [t].[CreatedDate]" (627a98df)
+2020-01-09T17:26:59.5263724+07:00 0HLSKTPN78PP1:00000009 [ERR] An exception occurred while iterating over the results of a query for context type '"BrandHub.Data.EF.Databases.BrandHubDbContext"'."
+""Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ProvinceID'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:77385f3d-26a4-44fd-bd5e-8edd9b3a93de
+Error Number:207,State:1,Class:16" (f5c7ac34)
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ProvinceID'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BrandHub.Data.EF.Repositories.Organizations.OrganizationRepository.Search(SearchOrganizationRequest request) in D:\Projects\Brandhub\src\BrandHub.Data.EF\Repositories\Organizations\OrganizationRepository.cs:line 44
+ClientConnectionId:77385f3d-26a4-44fd-bd5e-8edd9b3a93de
+Error Number:207,State:1,Class:16
+2020-01-09T17:27:45.7012788+07:00 0HLSKTPN78PP1:00000009 [ERR]  (00000000)
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ProvinceID'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BrandHub.Data.EF.Repositories.Organizations.OrganizationRepository.Search(SearchOrganizationRequest request) in D:\Projects\Brandhub\src\BrandHub.Data.EF\Repositories\Organizations\OrganizationRepository.cs:line 44
+   at BrandHub.Services.Organizations.OrganizationService.SearchOrganization(SearchOrganizationRequest request) in D:\Projects\Brandhub\src\BrandHub.Services\Services\Organizations\OrganizationService.cs:line 157
+   at BrandHub.CMS.Api.Controllers.OrganizationController.Search(SearchOrganizationRequest request) in D:\Projects\Brandhub\src\BrandHub.CMS.Api\Controllers\OrganizationController.cs:line 36
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ExceptionContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResourceFilter()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+ClientConnectionId:77385f3d-26a4-44fd-bd5e-8edd9b3a93de
+Error Number:207,State:1,Class:16
+2020-01-09T17:27:45.7069029+07:00 0HLSKTPN78PP1:00000009 [INF] Executed action "BrandHub.CMS.Api.Controllers.OrganizationController.Search (BrandHub.CMS.Api)" in 46278.8235ms (afa2e885)
+2020-01-09T17:27:45.7095193+07:00 0HLSKTPN78PP1:00000009 [INF] Executed endpoint '"BrandHub.CMS.Api.Controllers.OrganizationController.Search (BrandHub.CMS.Api)"' (99874f2b)
+2020-01-09T17:27:45.7150886+07:00 0HLSKTPN78PP1:00000009 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ProvinceID'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BrandHub.Data.EF.Repositories.Organizations.OrganizationRepository.Search(SearchOrganizationRequest request) in D:\Projects\Brandhub\src\BrandHub.Data.EF\Repositories\Organizations\OrganizationRepository.cs:line 44
+   at BrandHub.Services.Organizations.OrganizationService.SearchOrganization(SearchOrganizationRequest request) in D:\Projects\Brandhub\src\BrandHub.Services\Services\Organizations\OrganizationService.cs:line 157
+   at BrandHub.CMS.Api.Controllers.OrganizationController.Search(SearchOrganizationRequest request) in D:\Projects\Brandhub\src\BrandHub.CMS.Api\Controllers\OrganizationController.cs:line 36
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ExceptionContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResourceFilter()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+ClientConnectionId:77385f3d-26a4-44fd-bd5e-8edd9b3a93de
+Error Number:207,State:1,Class:16
+2020-01-09T17:27:45.7247638+07:00 0HLSKTPN78PP1:00000009 [INF] Request finished in 46307.8099ms 500 text/plain (791a596a)
+2020-01-09T17:28:16.0794723+07:00 0HLSKTPN78PP0:00000006 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:8000/cms/api/organization/search   (ca22a1cb)
+2020-01-09T17:28:16.0827638+07:00 0HLSKTPN78PP0:00000006 [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:28:16.0865362+07:00 0HLSKTPN78PP0:00000006 [INF] Request finished in 6.2982ms 204  (791a596a)
+2020-01-09T17:28:16.1032168+07:00 0HLSKTPN78PP0:00000007 [INF] Request starting HTTP/1.1 GET http://localhost:8000/cms/api/organization/search   (ca22a1cb)
+2020-01-09T17:28:16.1051032+07:00 0HLSKTPN78PP0:00000007 [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:28:16.1072207+07:00 0HLSKTPN78PP0:00000007 [INF] Request finished in 3.9664ms 307  (791a596a)
+2020-01-09T17:28:16.1130229+07:00 0HLSKTPN78PP1:0000000B [INF] Request starting HTTP/2 OPTIONS https://localhost:8001/cms/api/organization/search   (ca22a1cb)
+2020-01-09T17:28:16.1219768+07:00 0HLSKTPN78PP1:0000000B [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:28:16.1244334+07:00 0HLSKTPN78PP1:0000000B [INF] Request finished in 12.094ms 204  (791a596a)
+2020-01-09T17:28:16.1277439+07:00 0HLSKTPN78PP1:0000000D [INF] Request starting HTTP/2 GET https://localhost:8001/cms/api/organization/search   (ca22a1cb)
+2020-01-09T17:28:16.1299125+07:00 0HLSKTPN78PP1:0000000D [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:28:16.1320190+07:00 0HLSKTPN78PP1:0000000D [INF] Executing endpoint '"BrandHub.CMS.Api.Controllers.OrganizationController.Search (BrandHub.CMS.Api)"' (500cc934)
+2020-01-09T17:28:16.1361415+07:00 0HLSKTPN78PP1:0000000D [INF] Entity Framework Core "3.1.0" initialized '"BrandHubDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-01-09T17:28:16.1381545+07:00 0HLSKTPN78PP1:0000000D [INF] Route matched with "{action = \"Search\", controller = \"Organization\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[BrandHub.Models.Shared.SearchResult`1[BrandHub.Models.Organizations.OrganizationModel]] Search(BrandHub.Models.Organizations.SearchOrganizationRequest)" on controller "BrandHub.CMS.Api.Controllers.OrganizationController" ("BrandHub.CMS.Api"). (122b2fdf)
+2020-01-09T17:28:16.1519558+07:00 0HLSKTPN78PP1:0000000D [INF] Executed DbCommand ("9"ms) [Parameters=["@__token_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[ID], [u].[ExpiredTime], [u].[StartedTime], [u].[UserId], [u].[Value]
+FROM [UserTokens] AS [u]
+WHERE [u].[Value] = @__token_0" (0723d8ff)
+2020-01-09T17:28:16.1556791+07:00 0HLSKTPN78PP1:0000000D [INF] Executed DbCommand ("1"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[ID], [u].[CreatedDate], [u].[Email], [u].[Fullname], [u].[IsActive], [u].[IsDeleted], [u].[IsEmailConfirmed], [u].[LastLoginDate], [u].[PasswordHash], [u].[PasswordSalt], [u].[PhoneNumber], [u].[UpdatedDate], [u].[Username]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__p_0" (0723d8ff)
+2020-01-09T17:28:16.1599046+07:00 0HLSKTPN78PP1:0000000D [INF] Executed DbCommand ("2"ms) [Parameters=["@__model_ID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[RoleId] AS [ID], [r].[RoleName]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[ID]
+WHERE [u].[UserId] = @__model_ID_0" (0723d8ff)
+2020-01-09T17:28:16.1645694+07:00 0HLSKTPN78PP1:0000000D [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Organizations] AS [o]" (0723d8ff)
+2020-01-09T17:28:16.1690353+07:00 0HLSKTPN78PP1:0000000D [ERR] Failed executing DbCommand ("3"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[ID], [t].[AddressId], [t].[CreatedDate], [t].[IsActive], [t].[IsDeleted], [t].[Name], [t].[ProvinceID], [t].[UpdatedDate], [a].[ID], [a].[AddressLine], [a].[CountryId], [a].[DistrictId], [a].[IsDeleted], [a].[ProvinceId]
+FROM (
+    SELECT [o].[ID], [o].[AddressId], [o].[CreatedDate], [o].[IsActive], [o].[IsDeleted], [o].[Name], [o].[ProvinceID], [o].[UpdatedDate]
+    FROM [Organizations] AS [o]
+    ORDER BY [o].[CreatedDate]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [Addresses] AS [a] ON [t].[AddressId] = [a].[ID]
+ORDER BY [t].[CreatedDate]" (627a98df)
+2020-01-09T17:28:16.1738962+07:00 0HLSKTPN78PP1:0000000D [ERR] An exception occurred while iterating over the results of a query for context type '"BrandHub.Data.EF.Databases.BrandHubDbContext"'."
+""Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ProvinceID'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:77385f3d-26a4-44fd-bd5e-8edd9b3a93de
+Error Number:207,State:1,Class:16" (f5c7ac34)
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ProvinceID'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BrandHub.Data.EF.Repositories.Organizations.OrganizationRepository.Search(SearchOrganizationRequest request) in D:\Projects\Brandhub\src\BrandHub.Data.EF\Repositories\Organizations\OrganizationRepository.cs:line 44
+   at BrandHub.Services.Organizations.OrganizationService.SearchOrganization(SearchOrganizationRequest request) in D:\Projects\Brandhub\src\BrandHub.Services\Services\Organizations\OrganizationService.cs:line 157
+   at BrandHub.CMS.Api.Controllers.OrganizationController.Search(SearchOrganizationRequest request) in D:\Projects\Brandhub\src\BrandHub.CMS.Api\Controllers\OrganizationController.cs:line 36
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+ClientConnectionId:77385f3d-26a4-44fd-bd5e-8edd9b3a93de
+Error Number:207,State:1,Class:16
+2020-01-09T17:28:24.8852832+07:00 0HLSKTPN78PP1:0000000D [ERR]  (00000000)
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ProvinceID'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BrandHub.Data.EF.Repositories.Organizations.OrganizationRepository.Search(SearchOrganizationRequest request) in D:\Projects\Brandhub\src\BrandHub.Data.EF\Repositories\Organizations\OrganizationRepository.cs:line 44
+   at BrandHub.Services.Organizations.OrganizationService.SearchOrganization(SearchOrganizationRequest request) in D:\Projects\Brandhub\src\BrandHub.Services\Services\Organizations\OrganizationService.cs:line 157
+   at BrandHub.CMS.Api.Controllers.OrganizationController.Search(SearchOrganizationRequest request) in D:\Projects\Brandhub\src\BrandHub.CMS.Api\Controllers\OrganizationController.cs:line 36
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ExceptionContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResourceFilter()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+ClientConnectionId:77385f3d-26a4-44fd-bd5e-8edd9b3a93de
+Error Number:207,State:1,Class:16
+2020-01-09T17:28:24.8884003+07:00 0HLSKTPN78PP1:0000000D [INF] Executed action "BrandHub.CMS.Api.Controllers.OrganizationController.Search (BrandHub.CMS.Api)" in 8747.9198ms (afa2e885)
+2020-01-09T17:28:24.8911886+07:00 0HLSKTPN78PP1:0000000D [INF] Executed endpoint '"BrandHub.CMS.Api.Controllers.OrganizationController.Search (BrandHub.CMS.Api)"' (99874f2b)
+2020-01-09T17:28:24.9003453+07:00 0HLSKTPN78PP1:0000000D [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ProvinceID'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BrandHub.Data.EF.Repositories.Organizations.OrganizationRepository.Search(SearchOrganizationRequest request) in D:\Projects\Brandhub\src\BrandHub.Data.EF\Repositories\Organizations\OrganizationRepository.cs:line 44
+   at BrandHub.Services.Organizations.OrganizationService.SearchOrganization(SearchOrganizationRequest request) in D:\Projects\Brandhub\src\BrandHub.Services\Services\Organizations\OrganizationService.cs:line 157
+   at BrandHub.CMS.Api.Controllers.OrganizationController.Search(SearchOrganizationRequest request) in D:\Projects\Brandhub\src\BrandHub.CMS.Api\Controllers\OrganizationController.cs:line 36
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ExceptionContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResourceFilter()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+ClientConnectionId:77385f3d-26a4-44fd-bd5e-8edd9b3a93de
+Error Number:207,State:1,Class:16
+2020-01-09T17:28:24.9055806+07:00 0HLSKTPN78PP1:0000000D [INF] Request finished in 8776.7887ms 500 text/plain (791a596a)
+2020-01-09T17:28:56.6836454+07:00  [INF] User profile is available. Using '"C:\Users\SmartOSC\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2020-01-09T17:28:57.0779023+07:00 0HLSKTQTR3M0S:00000001 [INF] Request starting HTTP/2 GET https://localhost:8001/api/values   (ca22a1cb)
+2020-01-09T17:28:57.1038874+07:00 0HLSKTQTR3M0S:00000001 [INF] Executing endpoint '"BrandHub.CMS.Api.Controllers.ValuesController.Get (BrandHub.CMS.Api)"' (500cc934)
+2020-01-09T17:28:57.1297472+07:00 0HLSKTQTR3M0S:00000001 [INF] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get()" on controller "BrandHub.CMS.Api.Controllers.ValuesController" ("BrandHub.CMS.Api"). (122b2fdf)
+2020-01-09T17:28:57.1360092+07:00 0HLSKTQTR3M0S:00000001 [INF] Executing ObjectResult, writing value of type '"System.String[]"'. (8a1b66c8)
+2020-01-09T17:28:57.1787200+07:00 0HLSKTQTR3M0S:00000001 [INF] Executed action "BrandHub.CMS.Api.Controllers.ValuesController.Get (BrandHub.CMS.Api)" in 40.6065ms (afa2e885)
+2020-01-09T17:28:57.1801402+07:00 0HLSKTQTR3M0S:00000001 [INF] Executed endpoint '"BrandHub.CMS.Api.Controllers.ValuesController.Get (BrandHub.CMS.Api)"' (99874f2b)
+2020-01-09T17:28:57.1837147+07:00 0HLSKTQTR3M0S:00000001 [INF] Request finished in 108.2187ms 200 application/json; charset=utf-8 (791a596a)
+2020-01-09T17:31:56.9423582+07:00 0HLSKTQTR3M0T:00000001 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:8000/cms/api/organization/search   (ca22a1cb)
+2020-01-09T17:31:56.9496417+07:00 0HLSKTQTR3M0T:00000001 [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:31:56.9549112+07:00 0HLSKTQTR3M0T:00000001 [INF] Request finished in 11.3217ms 204  (791a596a)
+2020-01-09T17:31:56.9705194+07:00 0HLSKTQTR3M0T:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:8000/cms/api/organization/search   (ca22a1cb)
+2020-01-09T17:31:56.9736493+07:00 0HLSKTQTR3M0T:00000002 [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:31:56.9826307+07:00 0HLSKTQTR3M0T:00000002 [INF] Request finished in 13.1599ms 307  (791a596a)
+2020-01-09T17:31:56.9926861+07:00 0HLSKTQTR3M0U:00000001 [INF] Request starting HTTP/2 OPTIONS https://localhost:8001/cms/api/organization/search   (ca22a1cb)
+2020-01-09T17:31:56.9937119+07:00 0HLSKTQTR3M0U:00000001 [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:31:56.9953760+07:00 0HLSKTQTR3M0U:00000001 [INF] Request finished in 2.5008ms 204  (791a596a)
+2020-01-09T17:31:57.0001123+07:00 0HLSKTQTR3M0U:00000003 [INF] Request starting HTTP/2 GET https://localhost:8001/cms/api/organization/search   (ca22a1cb)
+2020-01-09T17:31:57.0076927+07:00 0HLSKTQTR3M0U:00000003 [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:31:57.0101863+07:00 0HLSKTQTR3M0U:00000003 [INF] Executing endpoint '"BrandHub.CMS.Api.Controllers.OrganizationController.Search (BrandHub.CMS.Api)"' (500cc934)
+2020-01-09T17:31:57.0397869+07:00 0HLSKTQTR3M0U:00000003 [INF] Entity Framework Core "3.1.0" initialized '"BrandHubDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-01-09T17:31:57.0522965+07:00 0HLSKTQTR3M0U:00000003 [INF] Route matched with "{action = \"Search\", controller = \"Organization\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[BrandHub.Models.Shared.SearchResult`1[BrandHub.Models.Organizations.OrganizationModel]] Search(BrandHub.Models.Organizations.SearchOrganizationRequest)" on controller "BrandHub.CMS.Api.Controllers.OrganizationController" ("BrandHub.CMS.Api"). (122b2fdf)
+2020-01-09T17:31:57.0771273+07:00 0HLSKTQTR3M0U:00000003 [INF] Executed DbCommand ("3"ms) [Parameters=["@__token_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[ID], [u].[ExpiredTime], [u].[StartedTime], [u].[UserId], [u].[Value]
+FROM [UserTokens] AS [u]
+WHERE [u].[Value] = @__token_0" (0723d8ff)
+2020-01-09T17:31:57.1032029+07:00 0HLSKTQTR3M0U:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[ID], [u].[CreatedDate], [u].[Email], [u].[Fullname], [u].[IsActive], [u].[IsDeleted], [u].[IsEmailConfirmed], [u].[LastLoginDate], [u].[PasswordHash], [u].[PasswordSalt], [u].[PhoneNumber], [u].[UpdatedDate], [u].[Username]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__p_0" (0723d8ff)
+2020-01-09T17:31:57.1313564+07:00 0HLSKTQTR3M0U:00000003 [INF] Executed DbCommand ("2"ms) [Parameters=["@__model_ID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[RoleId] AS [ID], [r].[RoleName]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[ID]
+WHERE [u].[UserId] = @__model_ID_0" (0723d8ff)
+2020-01-09T17:31:57.1575229+07:00 0HLSKTQTR3M0U:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Organizations] AS [o]" (0723d8ff)
+2020-01-09T17:31:57.1844796+07:00 0HLSKTQTR3M0U:00000003 [ERR] Failed executing DbCommand ("2"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[ID], [t].[AddressId], [t].[CreatedDate], [t].[IsActive], [t].[IsDeleted], [t].[Name], [t].[ProvinceID], [t].[UpdatedDate], [a].[ID], [a].[AddressLine], [a].[CountryId], [a].[DistrictId], [a].[IsDeleted], [a].[ProvinceId]
+FROM (
+    SELECT [o].[ID], [o].[AddressId], [o].[CreatedDate], [o].[IsActive], [o].[IsDeleted], [o].[Name], [o].[ProvinceID], [o].[UpdatedDate]
+    FROM [Organizations] AS [o]
+    ORDER BY [o].[CreatedDate]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [Addresses] AS [a] ON [t].[AddressId] = [a].[ID]
+ORDER BY [t].[CreatedDate]" (627a98df)
+2020-01-09T17:31:57.2138094+07:00 0HLSKTQTR3M0U:00000003 [ERR] An exception occurred while iterating over the results of a query for context type '"BrandHub.Data.EF.Databases.BrandHubDbContext"'."
+""Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ProvinceID'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:fcf21233-e8a2-4609-98eb-18556b562d61
+Error Number:207,State:1,Class:16" (f5c7ac34)
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ProvinceID'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BrandHub.Data.EF.Repositories.Organizations.OrganizationRepository.Search(SearchOrganizationRequest request) in D:\Projects\Brandhub\src\BrandHub.Data.EF\Repositories\Organizations\OrganizationRepository.cs:line 44
+ClientConnectionId:fcf21233-e8a2-4609-98eb-18556b562d61
+Error Number:207,State:1,Class:16
+2020-01-09T17:32:06.0250654+07:00 0HLSKTQTR3M0U:00000003 [ERR]  (00000000)
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ProvinceID'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BrandHub.Data.EF.Repositories.Organizations.OrganizationRepository.Search(SearchOrganizationRequest request) in D:\Projects\Brandhub\src\BrandHub.Data.EF\Repositories\Organizations\OrganizationRepository.cs:line 44
+   at BrandHub.Services.Organizations.OrganizationService.SearchOrganization(SearchOrganizationRequest request) in D:\Projects\Brandhub\src\BrandHub.Services\Services\Organizations\OrganizationService.cs:line 157
+   at BrandHub.CMS.Api.Controllers.OrganizationController.Search(SearchOrganizationRequest request) in D:\Projects\Brandhub\src\BrandHub.CMS.Api\Controllers\OrganizationController.cs:line 36
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ExceptionContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResourceFilter()
+--- End of stack trace from previous location where exception was thrown ---
+ClientConnectionId:fcf21233-e8a2-4609-98eb-18556b562d61
+Error Number:207,State:1,Class:16
+2020-01-09T17:32:06.0279845+07:00 0HLSKTQTR3M0U:00000003 [INF] Executed action "BrandHub.CMS.Api.Controllers.OrganizationController.Search (BrandHub.CMS.Api)" in 8973.7792ms (afa2e885)
+2020-01-09T17:32:06.0312610+07:00 0HLSKTQTR3M0U:00000003 [INF] Executed endpoint '"BrandHub.CMS.Api.Controllers.OrganizationController.Search (BrandHub.CMS.Api)"' (99874f2b)
+2020-01-09T17:32:06.0391922+07:00 0HLSKTQTR3M0U:00000003 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ProvinceID'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BrandHub.Data.EF.Repositories.Organizations.OrganizationRepository.Search(SearchOrganizationRequest request) in D:\Projects\Brandhub\src\BrandHub.Data.EF\Repositories\Organizations\OrganizationRepository.cs:line 44
+   at BrandHub.Services.Organizations.OrganizationService.SearchOrganization(SearchOrganizationRequest request) in D:\Projects\Brandhub\src\BrandHub.Services\Services\Organizations\OrganizationService.cs:line 157
+   at BrandHub.CMS.Api.Controllers.OrganizationController.Search(SearchOrganizationRequest request) in D:\Projects\Brandhub\src\BrandHub.CMS.Api\Controllers\OrganizationController.cs:line 36
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ExceptionContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResourceFilter()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+ClientConnectionId:fcf21233-e8a2-4609-98eb-18556b562d61
+Error Number:207,State:1,Class:16
+2020-01-09T17:32:06.0527358+07:00 0HLSKTQTR3M0U:00000003 [INF] Request finished in 9051.219ms 500 text/plain (791a596a)
+2020-01-09T17:34:27.6570883+07:00 0HLSKTQTR3M0T:00000003 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:8000/cms/api/authentication/token   (ca22a1cb)
+2020-01-09T17:34:27.6601040+07:00 0HLSKTQTR3M0T:00000003 [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:34:27.6623328+07:00 0HLSKTQTR3M0T:00000003 [INF] Request finished in 6.0881ms 204  (791a596a)
+2020-01-09T17:34:27.6679114+07:00 0HLSKTQTR3M0T:00000004 [INF] Request starting HTTP/1.1 POST http://localhost:8000/cms/api/authentication/token application/json 71 (ca22a1cb)
+2020-01-09T17:34:27.6693368+07:00 0HLSKTQTR3M0T:00000004 [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:34:27.6713547+07:00 0HLSKTQTR3M0T:00000004 [INF] Request finished in 3.483ms 307  (791a596a)
+2020-01-09T17:34:27.6736525+07:00 0HLSKTQTR3M0U:00000005 [INF] Request starting HTTP/2 OPTIONS https://localhost:8001/cms/api/authentication/token   (ca22a1cb)
+2020-01-09T17:34:27.6748499+07:00 0HLSKTQTR3M0U:00000005 [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:34:27.6765226+07:00 0HLSKTQTR3M0U:00000005 [INF] Request finished in 2.6147ms 204  (791a596a)
+2020-01-09T17:34:27.6790732+07:00 0HLSKTQTR3M0U:00000007 [INF] Request starting HTTP/2 POST https://localhost:8001/cms/api/authentication/token application/json 71 (ca22a1cb)
+2020-01-09T17:34:27.6801342+07:00 0HLSKTQTR3M0U:00000007 [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:34:27.6821943+07:00 0HLSKTQTR3M0U:00000007 [INF] Executing endpoint '"BrandHub.CMS.Api.Controllers.AuthenticationController.Authenticate (BrandHub.CMS.Api)"' (500cc934)
+2020-01-09T17:34:27.6891120+07:00 0HLSKTQTR3M0U:00000007 [INF] Route matched with "{action = \"Authenticate\", controller = \"Authentication\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Authenticate(BrandHub.CMS.Api.Models.UserLoginModel)" on controller "BrandHub.CMS.Api.Controllers.AuthenticationController" ("BrandHub.CMS.Api"). (122b2fdf)
+2020-01-09T17:34:27.6965215+07:00 0HLSKTQTR3M0U:00000007 [INF] Entity Framework Core "3.1.0" initialized '"BrandHubDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-01-09T17:34:27.7446786+07:00 0HLSKTQTR3M0U:00000007 [INF] Executed DbCommand ("9"ms) [Parameters=["@__username_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[ID], [u].[CreatedDate], [u].[Email], [u].[Fullname], [u].[IsActive], [u].[IsDeleted], [u].[IsEmailConfirmed], [u].[LastLoginDate], [u].[PasswordHash], [u].[PasswordSalt], [u].[PhoneNumber], [u].[UpdatedDate], [u].[Username]
+FROM [Users] AS [u]
+WHERE [u].[Username] = @__username_0" (0723d8ff)
+2020-01-09T17:34:27.7639128+07:00 0HLSKTQTR3M0U:00000007 [INF] Executed DbCommand ("2"ms) [Parameters=["@__model_ID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[RoleId] AS [ID], [r].[RoleName]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[ID]
+WHERE [u].[UserId] = @__model_ID_0" (0723d8ff)
+2020-01-09T17:34:27.7716758+07:00 0HLSKTQTR3M0U:00000007 [INF] Executed DbCommand ("3"ms) [Parameters=["@__userId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[ID], [u].[ExpiredTime], [u].[StartedTime], [u].[UserId], [u].[Value]
+FROM [UserTokens] AS [u]
+WHERE [u].[UserId] = @__userId_0" (0723d8ff)
+2020-01-09T17:34:27.7758103+07:00 0HLSKTQTR3M0U:00000007 [INF] Executing ObjectResult, writing value of type '"System.String"'. (8a1b66c8)
+2020-01-09T17:34:27.7781777+07:00 0HLSKTQTR3M0U:00000007 [INF] Executed action "BrandHub.CMS.Api.Controllers.AuthenticationController.Authenticate (BrandHub.CMS.Api)" in 87.7663ms (afa2e885)
+2020-01-09T17:34:27.7797311+07:00 0HLSKTQTR3M0U:00000007 [INF] Executed endpoint '"BrandHub.CMS.Api.Controllers.AuthenticationController.Authenticate (BrandHub.CMS.Api)"' (99874f2b)
+2020-01-09T17:34:27.7817756+07:00 0HLSKTQTR3M0U:00000007 [INF] Request finished in 102.7208ms 200 text/plain; charset=utf-8 (791a596a)
+2020-01-09T17:34:43.7554193+07:00 0HLSKTQTR3M0T:00000005 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:8000/cms/api/authentication/token   (ca22a1cb)
+2020-01-09T17:34:43.7576576+07:00 0HLSKTQTR3M0T:00000005 [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:34:43.7604774+07:00 0HLSKTQTR3M0T:00000005 [INF] Request finished in 4.2555ms 204  (791a596a)
+2020-01-09T17:34:43.7664170+07:00 0HLSKTQTR3M0T:00000006 [INF] Request starting HTTP/1.1 POST http://localhost:8000/cms/api/authentication/token application/json 71 (ca22a1cb)
+2020-01-09T17:34:43.7675130+07:00 0HLSKTQTR3M0T:00000006 [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:34:43.7700833+07:00 0HLSKTQTR3M0T:00000006 [INF] Request finished in 2.5884ms 307  (791a596a)
+2020-01-09T17:34:43.7737346+07:00 0HLSKTQTR3M0U:00000009 [INF] Request starting HTTP/2 OPTIONS https://localhost:8001/cms/api/authentication/token   (ca22a1cb)
+2020-01-09T17:34:43.7753820+07:00 0HLSKTQTR3M0U:00000009 [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:34:43.7769494+07:00 0HLSKTQTR3M0U:00000009 [INF] Request finished in 4.0816ms 204  (791a596a)
+2020-01-09T17:34:43.7803295+07:00 0HLSKTQTR3M0U:0000000B [INF] Request starting HTTP/2 POST https://localhost:8001/cms/api/authentication/token application/json 71 (ca22a1cb)
+2020-01-09T17:34:43.7824407+07:00 0HLSKTQTR3M0U:0000000B [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:34:43.7845548+07:00 0HLSKTQTR3M0U:0000000B [INF] Executing endpoint '"BrandHub.CMS.Api.Controllers.AuthenticationController.Authenticate (BrandHub.CMS.Api)"' (500cc934)
+2020-01-09T17:34:43.7872702+07:00 0HLSKTQTR3M0U:0000000B [INF] Route matched with "{action = \"Authenticate\", controller = \"Authentication\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Authenticate(BrandHub.CMS.Api.Models.UserLoginModel)" on controller "BrandHub.CMS.Api.Controllers.AuthenticationController" ("BrandHub.CMS.Api"). (122b2fdf)
+2020-01-09T17:34:43.7904335+07:00 0HLSKTQTR3M0U:0000000B [INF] Entity Framework Core "3.1.0" initialized '"BrandHubDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-01-09T17:34:43.7983034+07:00 0HLSKTQTR3M0U:0000000B [INF] Executed DbCommand ("3"ms) [Parameters=["@__username_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[ID], [u].[CreatedDate], [u].[Email], [u].[Fullname], [u].[IsActive], [u].[IsDeleted], [u].[IsEmailConfirmed], [u].[LastLoginDate], [u].[PasswordHash], [u].[PasswordSalt], [u].[PhoneNumber], [u].[UpdatedDate], [u].[Username]
+FROM [Users] AS [u]
+WHERE [u].[Username] = @__username_0" (0723d8ff)
+2020-01-09T17:34:43.8016611+07:00 0HLSKTQTR3M0U:0000000B [INF] Executed DbCommand ("0"ms) [Parameters=["@__model_ID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[RoleId] AS [ID], [r].[RoleName]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[ID]
+WHERE [u].[UserId] = @__model_ID_0" (0723d8ff)
+2020-01-09T17:34:43.8048198+07:00 0HLSKTQTR3M0U:0000000B [INF] Executed DbCommand ("0"ms) [Parameters=["@__userId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[ID], [u].[ExpiredTime], [u].[StartedTime], [u].[UserId], [u].[Value]
+FROM [UserTokens] AS [u]
+WHERE [u].[UserId] = @__userId_0" (0723d8ff)
+2020-01-09T17:34:43.8071978+07:00 0HLSKTQTR3M0U:0000000B [INF] Executing ObjectResult, writing value of type '"System.String"'. (8a1b66c8)
+2020-01-09T17:34:43.8098423+07:00 0HLSKTQTR3M0U:0000000B [INF] Executed action "BrandHub.CMS.Api.Controllers.AuthenticationController.Authenticate (BrandHub.CMS.Api)" in 20.5838ms (afa2e885)
+2020-01-09T17:34:43.8133826+07:00 0HLSKTQTR3M0U:0000000B [INF] Executed endpoint '"BrandHub.CMS.Api.Controllers.AuthenticationController.Authenticate (BrandHub.CMS.Api)"' (99874f2b)
+2020-01-09T17:34:43.8157789+07:00 0HLSKTQTR3M0U:0000000B [INF] Request finished in 35.6082ms 200 text/plain; charset=utf-8 (791a596a)
+2020-01-09T17:36:36.8641209+07:00 0HLSKTQTR3M0T:00000007 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:8000/cms/api/authentication/token   (ca22a1cb)
+2020-01-09T17:36:36.8665127+07:00 0HLSKTQTR3M0T:00000007 [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:36:36.8683582+07:00 0HLSKTQTR3M0T:00000007 [INF] Request finished in 5.1201ms 204  (791a596a)
+2020-01-09T17:36:36.8709272+07:00 0HLSKTQTR3M0T:00000008 [INF] Request starting HTTP/1.1 POST http://localhost:8000/cms/api/authentication/token application/json 71 (ca22a1cb)
+2020-01-09T17:36:36.8722768+07:00 0HLSKTQTR3M0T:00000008 [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:36:36.8737057+07:00 0HLSKTQTR3M0T:00000008 [INF] Request finished in 3.0217ms 307  (791a596a)
+2020-01-09T17:36:36.8790289+07:00 0HLSKTQTR3M0U:0000000D [INF] Request starting HTTP/2 OPTIONS https://localhost:8001/cms/api/authentication/token   (ca22a1cb)
+2020-01-09T17:36:36.8802860+07:00 0HLSKTQTR3M0U:0000000D [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:36:36.8830615+07:00 0HLSKTQTR3M0U:0000000D [INF] Request finished in 3.0835ms 204  (791a596a)
+2020-01-09T17:36:36.8856667+07:00 0HLSKTQTR3M0U:0000000F [INF] Request starting HTTP/2 POST https://localhost:8001/cms/api/authentication/token application/json 71 (ca22a1cb)
+2020-01-09T17:36:36.8875915+07:00 0HLSKTQTR3M0U:0000000F [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:36:36.8891953+07:00 0HLSKTQTR3M0U:0000000F [INF] Executing endpoint '"BrandHub.CMS.Api.Controllers.AuthenticationController.Authenticate (BrandHub.CMS.Api)"' (500cc934)
+2020-01-09T17:36:36.8908057+07:00 0HLSKTQTR3M0U:0000000F [INF] Route matched with "{action = \"Authenticate\", controller = \"Authentication\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Authenticate(BrandHub.CMS.Api.Models.UserLoginModel)" on controller "BrandHub.CMS.Api.Controllers.AuthenticationController" ("BrandHub.CMS.Api"). (122b2fdf)
+2020-01-09T17:36:36.8936928+07:00 0HLSKTQTR3M0U:0000000F [INF] Entity Framework Core "3.1.0" initialized '"BrandHubDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-01-09T17:36:36.8985815+07:00 0HLSKTQTR3M0U:0000000F [INF] Executed DbCommand ("2"ms) [Parameters=["@__username_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[ID], [u].[CreatedDate], [u].[Email], [u].[Fullname], [u].[IsActive], [u].[IsDeleted], [u].[IsEmailConfirmed], [u].[LastLoginDate], [u].[PasswordHash], [u].[PasswordSalt], [u].[PhoneNumber], [u].[UpdatedDate], [u].[Username]
+FROM [Users] AS [u]
+WHERE [u].[Username] = @__username_0" (0723d8ff)
+2020-01-09T17:36:36.9031077+07:00 0HLSKTQTR3M0U:0000000F [INF] Executed DbCommand ("2"ms) [Parameters=["@__model_ID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[RoleId] AS [ID], [r].[RoleName]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[ID]
+WHERE [u].[UserId] = @__model_ID_0" (0723d8ff)
+2020-01-09T17:36:36.9056786+07:00 0HLSKTQTR3M0U:0000000F [INF] Executed DbCommand ("1"ms) [Parameters=["@__userId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[ID], [u].[ExpiredTime], [u].[StartedTime], [u].[UserId], [u].[Value]
+FROM [UserTokens] AS [u]
+WHERE [u].[UserId] = @__userId_0" (0723d8ff)
+2020-01-09T17:36:36.9073214+07:00 0HLSKTQTR3M0U:0000000F [INF] Executing ObjectResult, writing value of type '"System.String"'. (8a1b66c8)
+2020-01-09T17:36:36.9090098+07:00 0HLSKTQTR3M0U:0000000F [INF] Executed action "BrandHub.CMS.Api.Controllers.AuthenticationController.Authenticate (BrandHub.CMS.Api)" in 16.929ms (afa2e885)
+2020-01-09T17:36:36.9103960+07:00 0HLSKTQTR3M0U:0000000F [INF] Executed endpoint '"BrandHub.CMS.Api.Controllers.AuthenticationController.Authenticate (BrandHub.CMS.Api)"' (99874f2b)
+2020-01-09T17:36:36.9119599+07:00 0HLSKTQTR3M0U:0000000F [INF] Request finished in 26.4873ms 200 text/plain; charset=utf-8 (791a596a)
+2020-01-09T17:37:29.8862229+07:00 0HLSKTQTR3M0T:00000009 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:8000/cms/api/authentication/token   (ca22a1cb)
+2020-01-09T17:37:29.8881047+07:00 0HLSKTQTR3M0T:00000009 [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:37:29.8904830+07:00 0HLSKTQTR3M0T:00000009 [INF] Request finished in 4.4927ms 204  (791a596a)
+2020-01-09T17:37:29.8962156+07:00 0HLSKTQTR3M0T:0000000A [INF] Request starting HTTP/1.1 POST http://localhost:8000/cms/api/authentication/token application/json 71 (ca22a1cb)
+2020-01-09T17:37:29.8977225+07:00 0HLSKTQTR3M0T:0000000A [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:37:29.8997535+07:00 0HLSKTQTR3M0T:0000000A [INF] Request finished in 3.631ms 307  (791a596a)
+2020-01-09T17:37:29.9042557+07:00 0HLSKTQTR3M0U:00000011 [INF] Request starting HTTP/2 OPTIONS https://localhost:8001/cms/api/authentication/token   (ca22a1cb)
+2020-01-09T17:37:29.9059530+07:00 0HLSKTQTR3M0U:00000011 [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:37:29.9084664+07:00 0HLSKTQTR3M0U:00000011 [INF] Request finished in 4.5126ms 204  (791a596a)
+2020-01-09T17:37:29.9116559+07:00 0HLSKTQTR3M0U:00000013 [INF] Request starting HTTP/2 POST https://localhost:8001/cms/api/authentication/token application/json 71 (ca22a1cb)
+2020-01-09T17:37:29.9128331+07:00 0HLSKTQTR3M0U:00000013 [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:37:29.9139725+07:00 0HLSKTQTR3M0U:00000013 [INF] Executing endpoint '"BrandHub.CMS.Api.Controllers.AuthenticationController.Authenticate (BrandHub.CMS.Api)"' (500cc934)
+2020-01-09T17:37:29.9151824+07:00 0HLSKTQTR3M0U:00000013 [INF] Route matched with "{action = \"Authenticate\", controller = \"Authentication\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Authenticate(BrandHub.CMS.Api.Models.UserLoginModel)" on controller "BrandHub.CMS.Api.Controllers.AuthenticationController" ("BrandHub.CMS.Api"). (122b2fdf)
+2020-01-09T17:37:29.9170452+07:00 0HLSKTQTR3M0U:00000013 [INF] Entity Framework Core "3.1.0" initialized '"BrandHubDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-01-09T17:37:29.9225171+07:00 0HLSKTQTR3M0U:00000013 [INF] Executed DbCommand ("2"ms) [Parameters=["@__username_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[ID], [u].[CreatedDate], [u].[Email], [u].[Fullname], [u].[IsActive], [u].[IsDeleted], [u].[IsEmailConfirmed], [u].[LastLoginDate], [u].[PasswordHash], [u].[PasswordSalt], [u].[PhoneNumber], [u].[UpdatedDate], [u].[Username]
+FROM [Users] AS [u]
+WHERE [u].[Username] = @__username_0" (0723d8ff)
+2020-01-09T17:37:29.9267290+07:00 0HLSKTQTR3M0U:00000013 [INF] Executed DbCommand ("2"ms) [Parameters=["@__model_ID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[RoleId] AS [ID], [r].[RoleName]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[ID]
+WHERE [u].[UserId] = @__model_ID_0" (0723d8ff)
+2020-01-09T17:37:29.9291731+07:00 0HLSKTQTR3M0U:00000013 [INF] Executed DbCommand ("1"ms) [Parameters=["@__userId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[ID], [u].[ExpiredTime], [u].[StartedTime], [u].[UserId], [u].[Value]
+FROM [UserTokens] AS [u]
+WHERE [u].[UserId] = @__userId_0" (0723d8ff)
+2020-01-09T17:37:29.9307009+07:00 0HLSKTQTR3M0U:00000013 [INF] Executing ObjectResult, writing value of type '"System.String"'. (8a1b66c8)
+2020-01-09T17:37:29.9324054+07:00 0HLSKTQTR3M0U:00000013 [INF] Executed action "BrandHub.CMS.Api.Controllers.AuthenticationController.Authenticate (BrandHub.CMS.Api)" in 16.0074ms (afa2e885)
+2020-01-09T17:37:29.9334409+07:00 0HLSKTQTR3M0U:00000013 [INF] Executed endpoint '"BrandHub.CMS.Api.Controllers.AuthenticationController.Authenticate (BrandHub.CMS.Api)"' (99874f2b)
+2020-01-09T17:37:29.9355574+07:00 0HLSKTQTR3M0U:00000013 [INF] Request finished in 23.6096ms 200 text/plain; charset=utf-8 (791a596a)
+2020-01-09T17:38:26.3543694+07:00 0HLSKTQTR3M0T:0000000B [INF] Request starting HTTP/1.1 OPTIONS http://localhost:8000/cms/api/authentication/token   (ca22a1cb)
+2020-01-09T17:38:26.3566335+07:00 0HLSKTQTR3M0T:0000000B [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:38:26.3590121+07:00 0HLSKTQTR3M0T:0000000B [INF] Request finished in 4.6131ms 204  (791a596a)
+2020-01-09T17:38:26.3656310+07:00 0HLSKTQTR3M0T:0000000C [INF] Request starting HTTP/1.1 POST http://localhost:8000/cms/api/authentication/token application/json 71 (ca22a1cb)
+2020-01-09T17:38:26.3671239+07:00 0HLSKTQTR3M0T:0000000C [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:38:26.3691283+07:00 0HLSKTQTR3M0T:0000000C [INF] Request finished in 3.4971ms 307  (791a596a)
+2020-01-09T17:38:26.3713717+07:00 0HLSKTQTR3M0U:00000015 [INF] Request starting HTTP/2 OPTIONS https://localhost:8001/cms/api/authentication/token   (ca22a1cb)
+2020-01-09T17:38:26.3728646+07:00 0HLSKTQTR3M0U:00000015 [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:38:26.3770285+07:00 0HLSKTQTR3M0U:00000015 [INF] Request finished in 3.71ms 204  (791a596a)
+2020-01-09T17:38:26.3809975+07:00 0HLSKTQTR3M0U:00000017 [INF] Request starting HTTP/2 POST https://localhost:8001/cms/api/authentication/token application/json 71 (ca22a1cb)
+2020-01-09T17:38:26.3830016+07:00 0HLSKTQTR3M0U:00000017 [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:38:26.3844801+07:00 0HLSKTQTR3M0U:00000017 [INF] Executing endpoint '"BrandHub.CMS.Api.Controllers.AuthenticationController.Authenticate (BrandHub.CMS.Api)"' (500cc934)
+2020-01-09T17:38:26.3858771+07:00 0HLSKTQTR3M0U:00000017 [INF] Route matched with "{action = \"Authenticate\", controller = \"Authentication\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Authenticate(BrandHub.CMS.Api.Models.UserLoginModel)" on controller "BrandHub.CMS.Api.Controllers.AuthenticationController" ("BrandHub.CMS.Api"). (122b2fdf)
+2020-01-09T17:38:26.3881875+07:00 0HLSKTQTR3M0U:00000017 [INF] Entity Framework Core "3.1.0" initialized '"BrandHubDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-01-09T17:38:26.3959472+07:00 0HLSKTQTR3M0U:00000017 [INF] Executed DbCommand ("3"ms) [Parameters=["@__username_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[ID], [u].[CreatedDate], [u].[Email], [u].[Fullname], [u].[IsActive], [u].[IsDeleted], [u].[IsEmailConfirmed], [u].[LastLoginDate], [u].[PasswordHash], [u].[PasswordSalt], [u].[PhoneNumber], [u].[UpdatedDate], [u].[Username]
+FROM [Users] AS [u]
+WHERE [u].[Username] = @__username_0" (0723d8ff)
+2020-01-09T17:38:26.4022795+07:00 0HLSKTQTR3M0U:00000017 [INF] Executed DbCommand ("1"ms) [Parameters=["@__model_ID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[RoleId] AS [ID], [r].[RoleName]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[ID]
+WHERE [u].[UserId] = @__model_ID_0" (0723d8ff)
+2020-01-09T17:38:26.4060301+07:00 0HLSKTQTR3M0U:00000017 [INF] Executed DbCommand ("1"ms) [Parameters=["@__userId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[ID], [u].[ExpiredTime], [u].[StartedTime], [u].[UserId], [u].[Value]
+FROM [UserTokens] AS [u]
+WHERE [u].[UserId] = @__userId_0" (0723d8ff)
+2020-01-09T17:38:26.4090099+07:00 0HLSKTQTR3M0U:00000017 [INF] Executing ObjectResult, writing value of type '"System.String"'. (8a1b66c8)
+2020-01-09T17:38:26.4114839+07:00 0HLSKTQTR3M0U:00000017 [INF] Executed action "BrandHub.CMS.Api.Controllers.AuthenticationController.Authenticate (BrandHub.CMS.Api)" in 23.7623ms (afa2e885)
+2020-01-09T17:38:26.4136676+07:00 0HLSKTQTR3M0U:00000017 [INF] Executed endpoint '"BrandHub.CMS.Api.Controllers.AuthenticationController.Authenticate (BrandHub.CMS.Api)"' (99874f2b)
+2020-01-09T17:38:26.4162497+07:00 0HLSKTQTR3M0U:00000017 [INF] Request finished in 35.2874ms 200 text/plain; charset=utf-8 (791a596a)
+2020-01-09T17:38:36.8941741+07:00 0HLSKTQTR3M0T:0000000D [INF] Request starting HTTP/1.1 OPTIONS http://localhost:8000/cms/api/organization/search   (ca22a1cb)
+2020-01-09T17:38:36.8968705+07:00 0HLSKTQTR3M0T:0000000D [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:38:36.8992154+07:00 0HLSKTQTR3M0T:0000000D [INF] Request finished in 6.9479ms 204  (791a596a)
+2020-01-09T17:38:36.9027315+07:00 0HLSKTQTR3M0T:0000000E [INF] Request starting HTTP/1.1 GET http://localhost:8000/cms/api/organization/search   (ca22a1cb)
+2020-01-09T17:38:36.9039116+07:00 0HLSKTQTR3M0T:0000000E [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:38:36.9054020+07:00 0HLSKTQTR3M0T:0000000E [INF] Request finished in 3.5696ms 307  (791a596a)
+2020-01-09T17:38:36.9075604+07:00 0HLSKTQTR3M0U:00000019 [INF] Request starting HTTP/2 OPTIONS https://localhost:8001/cms/api/organization/search   (ca22a1cb)
+2020-01-09T17:38:36.9087161+07:00 0HLSKTQTR3M0U:00000019 [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:38:36.9100127+07:00 0HLSKTQTR3M0U:00000019 [INF] Request finished in 2.4385ms 204  (791a596a)
+2020-01-09T17:38:36.9126535+07:00 0HLSKTQTR3M0U:0000001B [INF] Request starting HTTP/2 GET https://localhost:8001/cms/api/organization/search   (ca22a1cb)
+2020-01-09T17:38:36.9137379+07:00 0HLSKTQTR3M0U:0000001B [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:38:36.9149822+07:00 0HLSKTQTR3M0U:0000001B [INF] Executing endpoint '"BrandHub.CMS.Api.Controllers.OrganizationController.Search (BrandHub.CMS.Api)"' (500cc934)
+2020-01-09T17:38:36.9178032+07:00 0HLSKTQTR3M0U:0000001B [INF] Entity Framework Core "3.1.0" initialized '"BrandHubDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-01-09T17:38:36.9192409+07:00 0HLSKTQTR3M0U:0000001B [INF] Route matched with "{action = \"Search\", controller = \"Organization\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[BrandHub.Models.Shared.SearchResult`1[BrandHub.Models.Organizations.OrganizationModel]] Search(BrandHub.Models.Organizations.SearchOrganizationRequest)" on controller "BrandHub.CMS.Api.Controllers.OrganizationController" ("BrandHub.CMS.Api"). (122b2fdf)
+2020-01-09T17:38:36.9229918+07:00 0HLSKTQTR3M0U:0000001B [INF] Executed DbCommand ("1"ms) [Parameters=["@__token_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[ID], [u].[ExpiredTime], [u].[StartedTime], [u].[UserId], [u].[Value]
+FROM [UserTokens] AS [u]
+WHERE [u].[Value] = @__token_0" (0723d8ff)
+2020-01-09T17:38:36.9278915+07:00 0HLSKTQTR3M0U:0000001B [INF] Executed DbCommand ("1"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[ID], [u].[CreatedDate], [u].[Email], [u].[Fullname], [u].[IsActive], [u].[IsDeleted], [u].[IsEmailConfirmed], [u].[LastLoginDate], [u].[PasswordHash], [u].[PasswordSalt], [u].[PhoneNumber], [u].[UpdatedDate], [u].[Username]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__p_0" (0723d8ff)
+2020-01-09T17:38:36.9335590+07:00 0HLSKTQTR3M0U:0000001B [INF] Executed DbCommand ("2"ms) [Parameters=["@__model_ID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[RoleId] AS [ID], [r].[RoleName]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[ID]
+WHERE [u].[UserId] = @__model_ID_0" (0723d8ff)
+2020-01-09T17:38:36.9387618+07:00 0HLSKTQTR3M0U:0000001B [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Organizations] AS [o]" (0723d8ff)
+2020-01-09T17:38:36.9422345+07:00 0HLSKTQTR3M0U:0000001B [ERR] Failed executing DbCommand ("2"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[ID], [t].[AddressId], [t].[CreatedDate], [t].[IsActive], [t].[IsDeleted], [t].[Name], [t].[ProvinceID], [t].[UpdatedDate], [a].[ID], [a].[AddressLine], [a].[CountryId], [a].[DistrictId], [a].[IsDeleted], [a].[ProvinceId]
+FROM (
+    SELECT [o].[ID], [o].[AddressId], [o].[CreatedDate], [o].[IsActive], [o].[IsDeleted], [o].[Name], [o].[ProvinceID], [o].[UpdatedDate]
+    FROM [Organizations] AS [o]
+    ORDER BY [o].[CreatedDate]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [Addresses] AS [a] ON [t].[AddressId] = [a].[ID]
+ORDER BY [t].[CreatedDate]" (627a98df)
+2020-01-09T17:41:40.7752275+07:00  [INF] User profile is available. Using '"C:\Users\SmartOSC\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2020-01-09T17:41:41.6209927+07:00 0HLSKU21MBR9P:00000001 [INF] Request starting HTTP/2 GET https://localhost:8001/api/values   (ca22a1cb)
+2020-01-09T17:41:41.6472225+07:00 0HLSKU21MBR9P:00000001 [INF] Executing endpoint '"BrandHub.CMS.Api.Controllers.ValuesController.Get (BrandHub.CMS.Api)"' (500cc934)
+2020-01-09T17:41:41.6737355+07:00 0HLSKU21MBR9P:00000001 [INF] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get()" on controller "BrandHub.CMS.Api.Controllers.ValuesController" ("BrandHub.CMS.Api"). (122b2fdf)
+2020-01-09T17:41:41.6802798+07:00 0HLSKU21MBR9P:00000001 [INF] Executing ObjectResult, writing value of type '"System.String[]"'. (8a1b66c8)
+2020-01-09T17:41:41.7271383+07:00 0HLSKU21MBR9P:00000001 [INF] Executed action "BrandHub.CMS.Api.Controllers.ValuesController.Get (BrandHub.CMS.Api)" in 45.437ms (afa2e885)
+2020-01-09T17:41:41.7292341+07:00 0HLSKU21MBR9P:00000001 [INF] Executed endpoint '"BrandHub.CMS.Api.Controllers.ValuesController.Get (BrandHub.CMS.Api)"' (99874f2b)
+2020-01-09T17:41:41.7334659+07:00 0HLSKU21MBR9P:00000001 [INF] Request finished in 114.3194ms 200 application/json; charset=utf-8 (791a596a)
+2020-01-09T17:41:47.6029956+07:00 0HLSKU21MBR9Q:00000001 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:8000/cms/api/organization/search   (ca22a1cb)
+2020-01-09T17:41:47.6227017+07:00 0HLSKU21MBR9Q:00000001 [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:41:47.6301723+07:00 0HLSKU21MBR9Q:00000001 [INF] Request finished in 26.023ms 204  (791a596a)
+2020-01-09T17:41:47.6470724+07:00 0HLSKU21MBR9Q:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:8000/cms/api/organization/search   (ca22a1cb)
+2020-01-09T17:41:47.6500819+07:00 0HLSKU21MBR9Q:00000002 [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:41:47.6633910+07:00 0HLSKU21MBR9Q:00000002 [INF] Request finished in 16.5142ms 307  (791a596a)
+2020-01-09T17:41:47.6709015+07:00 0HLSKU21MBR9R:00000001 [INF] Request starting HTTP/2 OPTIONS https://localhost:8001/cms/api/organization/search   (ca22a1cb)
+2020-01-09T17:41:47.6721279+07:00 0HLSKU21MBR9R:00000001 [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:41:47.6746201+07:00 0HLSKU21MBR9R:00000001 [INF] Request finished in 2.8587ms 204  (791a596a)
+2020-01-09T17:41:47.6799826+07:00 0HLSKU21MBR9R:00000003 [INF] Request starting HTTP/2 GET https://localhost:8001/cms/api/organization/search   (ca22a1cb)
+2020-01-09T17:41:47.6821116+07:00 0HLSKU21MBR9R:00000003 [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:41:47.6901993+07:00 0HLSKU21MBR9R:00000003 [INF] Executing endpoint '"BrandHub.CMS.Api.Controllers.OrganizationController.Search (BrandHub.CMS.Api)"' (500cc934)
+2020-01-09T17:41:47.7162114+07:00 0HLSKU21MBR9R:00000003 [INF] Entity Framework Core "3.1.0" initialized '"BrandHubDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-01-09T17:41:47.7297116+07:00 0HLSKU21MBR9R:00000003 [INF] Route matched with "{action = \"Search\", controller = \"Organization\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[BrandHub.Models.Shared.SearchResult`1[BrandHub.Models.Organizations.OrganizationModel]] Search(BrandHub.Models.Organizations.SearchOrganizationRequest)" on controller "BrandHub.CMS.Api.Controllers.OrganizationController" ("BrandHub.CMS.Api"). (122b2fdf)
+2020-01-09T17:41:47.7482666+07:00 0HLSKU21MBR9R:00000003 [INF] Executed DbCommand ("2"ms) [Parameters=["@__token_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[ID], [u].[ExpiredTime], [u].[StartedTime], [u].[UserId], [u].[Value]
+FROM [UserTokens] AS [u]
+WHERE [u].[Value] = @__token_0" (0723d8ff)
+2020-01-09T17:41:47.7614153+07:00 0HLSKU21MBR9R:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[ID], [u].[CreatedDate], [u].[Email], [u].[Fullname], [u].[IsActive], [u].[IsDeleted], [u].[IsEmailConfirmed], [u].[LastLoginDate], [u].[PasswordHash], [u].[PasswordSalt], [u].[PhoneNumber], [u].[UpdatedDate], [u].[Username]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__p_0" (0723d8ff)
+2020-01-09T17:41:47.7887037+07:00 0HLSKU21MBR9R:00000003 [INF] Executed DbCommand ("2"ms) [Parameters=["@__model_ID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[RoleId] AS [ID], [r].[RoleName]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[ID]
+WHERE [u].[UserId] = @__model_ID_0" (0723d8ff)
+2020-01-09T17:41:47.8158236+07:00 0HLSKU21MBR9R:00000003 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Organizations] AS [o]" (0723d8ff)
+2020-01-09T17:41:47.8430335+07:00 0HLSKU21MBR9R:00000003 [ERR] Failed executing DbCommand ("2"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[ID], [t].[AddressId], [t].[CreatedDate], [t].[IsActive], [t].[IsDeleted], [t].[Name], [t].[ProvinceID], [t].[UpdatedDate], [a].[ID], [a].[AddressLine], [a].[CountryId], [a].[DistrictId], [a].[IsDeleted], [a].[ProvinceId]
+FROM (
+    SELECT [o].[ID], [o].[AddressId], [o].[CreatedDate], [o].[IsActive], [o].[IsDeleted], [o].[Name], [o].[ProvinceID], [o].[UpdatedDate]
+    FROM [Organizations] AS [o]
+    ORDER BY [o].[CreatedDate]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [Addresses] AS [a] ON [t].[AddressId] = [a].[ID]
+ORDER BY [t].[CreatedDate]" (627a98df)
+2020-01-09T17:41:47.8754715+07:00 0HLSKU21MBR9R:00000003 [ERR] An exception occurred while iterating over the results of a query for context type '"BrandHub.Data.EF.Databases.BrandHubDbContext"'."
+""Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ProvinceID'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:5b594484-49cb-4d21-ae0d-eae63fe22e9c
+Error Number:207,State:1,Class:16" (f5c7ac34)
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ProvinceID'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BrandHub.Data.EF.Repositories.Organizations.OrganizationRepository.Search(SearchOrganizationRequest request) in D:\Projects\Brandhub\src\BrandHub.Data.EF\Repositories\Organizations\OrganizationRepository.cs:line 44
+ClientConnectionId:5b594484-49cb-4d21-ae0d-eae63fe22e9c
+Error Number:207,State:1,Class:16
+2020-01-09T17:42:04.0895658+07:00 0HLSKU21MBR9Q:00000003 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:8000/cms/api/organization/search   (ca22a1cb)
+2020-01-09T17:42:04.0923715+07:00 0HLSKU21MBR9Q:00000003 [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:42:04.0943201+07:00 0HLSKU21MBR9Q:00000003 [INF] Request finished in 27.5918ms 204  (791a596a)
+2020-01-09T17:42:04.0985592+07:00 0HLSKU21MBR9Q:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:8000/cms/api/organization/search   (ca22a1cb)
+2020-01-09T17:42:04.0999522+07:00 0HLSKU21MBR9Q:00000004 [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:42:04.1015392+07:00 0HLSKU21MBR9Q:00000004 [INF] Request finished in 3.5327ms 307  (791a596a)
+2020-01-09T17:42:04.1058370+07:00 0HLSKU21MBR9R:00000005 [INF] Request starting HTTP/2 OPTIONS https://localhost:8001/cms/api/organization/search   (ca22a1cb)
+2020-01-09T17:42:04.1084355+07:00 0HLSKU21MBR9R:00000005 [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:42:04.1110280+07:00 0HLSKU21MBR9R:00000005 [INF] Request finished in 5.4871ms 204  (791a596a)
+2020-01-09T17:42:04.1144169+07:00 0HLSKU21MBR9R:00000003 [ERR]  (00000000)
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ProvinceID'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BrandHub.Data.EF.Repositories.Organizations.OrganizationRepository.Search(SearchOrganizationRequest request) in D:\Projects\Brandhub\src\BrandHub.Data.EF\Repositories\Organizations\OrganizationRepository.cs:line 44
+   at BrandHub.Services.Organizations.OrganizationService.SearchOrganization(SearchOrganizationRequest request) in D:\Projects\Brandhub\src\BrandHub.Services\Services\Organizations\OrganizationService.cs:line 157
+   at BrandHub.CMS.Api.Controllers.OrganizationController.Search(SearchOrganizationRequest request) in D:\Projects\Brandhub\src\BrandHub.CMS.Api\Controllers\OrganizationController.cs:line 36
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ExceptionContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResourceFilter()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+ClientConnectionId:5b594484-49cb-4d21-ae0d-eae63fe22e9c
+Error Number:207,State:1,Class:16
+2020-01-09T17:42:04.1175955+07:00 0HLSKU21MBR9R:00000007 [INF] Request starting HTTP/2 GET https://localhost:8001/cms/api/organization/search   (ca22a1cb)
+2020-01-09T17:42:04.1529817+07:00 0HLSKU21MBR9R:00000007 [INF] CORS policy execution successful. (5409d6ef)
+2020-01-09T17:42:04.1530116+07:00 0HLSKU21MBR9R:00000003 [INF] Executed action "BrandHub.CMS.Api.Controllers.OrganizationController.Search (BrandHub.CMS.Api)" in 16385.5028ms (afa2e885)
+2020-01-09T17:42:04.1569248+07:00 0HLSKU21MBR9R:00000007 [INF] Executing endpoint '"BrandHub.CMS.Api.Controllers.OrganizationController.Search (BrandHub.CMS.Api)"' (500cc934)
+2020-01-09T17:42:04.1609918+07:00 0HLSKU21MBR9R:00000003 [INF] Executed endpoint '"BrandHub.CMS.Api.Controllers.OrganizationController.Search (BrandHub.CMS.Api)"' (99874f2b)
+2020-01-09T17:42:04.1704099+07:00 0HLSKU21MBR9R:00000003 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ProvinceID'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BrandHub.Data.EF.Repositories.Organizations.OrganizationRepository.Search(SearchOrganizationRequest request) in D:\Projects\Brandhub\src\BrandHub.Data.EF\Repositories\Organizations\OrganizationRepository.cs:line 44
+   at BrandHub.Services.Organizations.OrganizationService.SearchOrganization(SearchOrganizationRequest request) in D:\Projects\Brandhub\src\BrandHub.Services\Services\Organizations\OrganizationService.cs:line 157
+   at BrandHub.CMS.Api.Controllers.OrganizationController.Search(SearchOrganizationRequest request) in D:\Projects\Brandhub\src\BrandHub.CMS.Api\Controllers\OrganizationController.cs:line 36
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ExceptionContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResourceFilter()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+ClientConnectionId:5b594484-49cb-4d21-ae0d-eae63fe22e9c
+Error Number:207,State:1,Class:16
+2020-01-09T17:42:04.2202562+07:00 0HLSKU21MBR9R:00000007 [INF] Entity Framework Core "3.1.0" initialized '"BrandHubDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-01-09T17:42:04.2285791+07:00 0HLSKU21MBR9R:00000007 [INF] Route matched with "{action = \"Search\", controller = \"Organization\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[BrandHub.Models.Shared.SearchResult`1[BrandHub.Models.Organizations.OrganizationModel]] Search(BrandHub.Models.Organizations.SearchOrganizationRequest)" on controller "BrandHub.CMS.Api.Controllers.OrganizationController" ("BrandHub.CMS.Api"). (122b2fdf)
+2020-01-09T17:42:04.2336779+07:00 0HLSKU21MBR9R:00000007 [INF] Executed DbCommand ("1"ms) [Parameters=["@__token_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[ID], [u].[ExpiredTime], [u].[StartedTime], [u].[UserId], [u].[Value]
+FROM [UserTokens] AS [u]
+WHERE [u].[Value] = @__token_0" (0723d8ff)
+2020-01-09T17:42:04.2373835+07:00 0HLSKU21MBR9R:00000007 [INF] Executed DbCommand ("0"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[ID], [u].[CreatedDate], [u].[Email], [u].[Fullname], [u].[IsActive], [u].[IsDeleted], [u].[IsEmailConfirmed], [u].[LastLoginDate], [u].[PasswordHash], [u].[PasswordSalt], [u].[PhoneNumber], [u].[UpdatedDate], [u].[Username]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__p_0" (0723d8ff)
+2020-01-09T17:42:04.2416392+07:00 0HLSKU21MBR9R:00000003 [INF] Request finished in 16560.2354ms 500 text/plain (791a596a)
+2020-01-09T17:42:04.2432178+07:00 0HLSKU21MBR9R:00000007 [INF] Executed DbCommand ("1"ms) [Parameters=["@__model_ID_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[RoleId] AS [ID], [r].[RoleName]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[ID]
+WHERE [u].[UserId] = @__model_ID_0" (0723d8ff)
+2020-01-09T17:42:04.2456164+07:00 0HLSKU21MBR9R:00000007 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Organizations] AS [o]" (0723d8ff)
+2020-01-09T17:42:04.2483194+07:00 0HLSKU21MBR9R:00000007 [ERR] Failed executing DbCommand ("1"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[ID], [t].[AddressId], [t].[CreatedDate], [t].[IsActive], [t].[IsDeleted], [t].[Name], [t].[ProvinceID], [t].[UpdatedDate], [a].[ID], [a].[AddressLine], [a].[CountryId], [a].[DistrictId], [a].[IsDeleted], [a].[ProvinceId]
+FROM (
+    SELECT [o].[ID], [o].[AddressId], [o].[CreatedDate], [o].[IsActive], [o].[IsDeleted], [o].[Name], [o].[ProvinceID], [o].[UpdatedDate]
+    FROM [Organizations] AS [o]
+    ORDER BY [o].[CreatedDate]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [Addresses] AS [a] ON [t].[AddressId] = [a].[ID]
+ORDER BY [t].[CreatedDate]" (627a98df)
+2020-01-09T17:42:04.2516957+07:00 0HLSKU21MBR9R:00000007 [ERR] An exception occurred while iterating over the results of a query for context type '"BrandHub.Data.EF.Databases.BrandHubDbContext"'."
+""Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ProvinceID'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:5b594484-49cb-4d21-ae0d-eae63fe22e9c
+Error Number:207,State:1,Class:16" (f5c7ac34)
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ProvinceID'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BrandHub.Data.EF.Repositories.Organizations.OrganizationRepository.Search(SearchOrganizationRequest request) in D:\Projects\Brandhub\src\BrandHub.Data.EF\Repositories\Organizations\OrganizationRepository.cs:line 44
+   at BrandHub.Services.Organizations.OrganizationService.SearchOrganization(SearchOrganizationRequest request) in D:\Projects\Brandhub\src\BrandHub.Services\Services\Organizations\OrganizationService.cs:line 157
+   at BrandHub.CMS.Api.Controllers.OrganizationController.Search(SearchOrganizationRequest request) in D:\Projects\Brandhub\src\BrandHub.CMS.Api\Controllers\OrganizationController.cs:line 36
+   at lambda_method(Closure , Object , Object[] )
+ClientConnectionId:5b594484-49cb-4d21-ae0d-eae63fe22e9c
+Error Number:207,State:1,Class:16
+2020-01-09T17:42:05.8099875+07:00 0HLSKU21MBR9R:00000007 [ERR]  (00000000)
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ProvinceID'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BrandHub.Data.EF.Repositories.Organizations.OrganizationRepository.Search(SearchOrganizationRequest request) in D:\Projects\Brandhub\src\BrandHub.Data.EF\Repositories\Organizations\OrganizationRepository.cs:line 44
+   at BrandHub.Services.Organizations.OrganizationService.SearchOrganization(SearchOrganizationRequest request) in D:\Projects\Brandhub\src\BrandHub.Services\Services\Organizations\OrganizationService.cs:line 157
+   at BrandHub.CMS.Api.Controllers.OrganizationController.Search(SearchOrganizationRequest request) in D:\Projects\Brandhub\src\BrandHub.CMS.Api\Controllers\OrganizationController.cs:line 36
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ExceptionContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResourceFilter()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+ClientConnectionId:5b594484-49cb-4d21-ae0d-eae63fe22e9c
+Error Number:207,State:1,Class:16
+2020-01-09T17:42:05.8129880+07:00 0HLSKU21MBR9R:00000007 [INF] Executed action "BrandHub.CMS.Api.Controllers.OrganizationController.Search (BrandHub.CMS.Api)" in 1582.2769ms (afa2e885)
+2020-01-09T17:42:05.8154078+07:00 0HLSKU21MBR9R:00000007 [INF] Executed endpoint '"BrandHub.CMS.Api.Controllers.OrganizationController.Search (BrandHub.CMS.Api)"' (99874f2b)
+2020-01-09T17:42:05.8194185+07:00 0HLSKU21MBR9R:00000007 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ProvinceID'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BrandHub.Data.EF.Repositories.Organizations.OrganizationRepository.Search(SearchOrganizationRequest request) in D:\Projects\Brandhub\src\BrandHub.Data.EF\Repositories\Organizations\OrganizationRepository.cs:line 44
+   at BrandHub.Services.Organizations.OrganizationService.SearchOrganization(SearchOrganizationRequest request) in D:\Projects\Brandhub\src\BrandHub.Services\Services\Organizations\OrganizationService.cs:line 157
+   at BrandHub.CMS.Api.Controllers.OrganizationController.Search(SearchOrganizationRequest request) in D:\Projects\Brandhub\src\BrandHub.CMS.Api\Controllers\OrganizationController.cs:line 36
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ExceptionContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResourceFilter()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+ClientConnectionId:5b594484-49cb-4d21-ae0d-eae63fe22e9c
+Error Number:207,State:1,Class:16
+2020-01-09T17:42:05.8227270+07:00 0HLSKU21MBR9R:00000007 [INF] Request finished in 1706.3483ms 500 text/plain (791a596a)

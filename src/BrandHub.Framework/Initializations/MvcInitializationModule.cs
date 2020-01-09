@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
+using Newtonsoft.Json.Serialization;
 
 namespace BrandHub.Framework.Initializations
 {
@@ -11,11 +12,9 @@ namespace BrandHub.Framework.Initializations
         public void Initialize(IServiceCollection services)
         {
             services.AddMvc()
-                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
-                .AddJsonOptions(opt =>
-                {
-                    opt.UseMemberCasing();
-                });
+                .SetCompatibilityVersion(CompatibilityVersion.Latest)
+                .AddNewtonsoftJson(options => options.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver())
+                .AddMvcOptions(x => x.EnableEndpointRouting = true);
         }
     }
 }
